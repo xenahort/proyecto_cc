@@ -7,4 +7,4 @@ Master: Máster Profesionalizante en Ingeniería Informática desarrollado duran
 
 Proyecto: Se realizará un proyecto que deduce si un comentario tiene contido en ciberbullying o no lo tiene
 
-Enlace:
+Enlace: https://jrtrillo.github.io/proyecto_cc/
