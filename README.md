@@ -40,7 +40,7 @@ Por último, se guardara el resultado del comentario obtenido, se actualizará l
 En resumen los microservicios van a ser:
 
 	- Microservicio de conexión con la base de datos NoSQL MongoDB.
-	- Microservicio de obtencion de resultado.
+	- Microservicio de obtención de resultado.
 	- Microservicio de tockenización.
 	- Microservicio de análisis del comentario.
 	- Microservicio de consulta de datos y resultados.
