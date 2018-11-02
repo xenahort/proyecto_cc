@@ -1,8 +1,8 @@
 # proyecto_cc
 
 [![Status](https://img.shields.io/badge/Status-Documenting-blue.svg)](https://github.com/jrtrillo/proyecto_cc/blob/master/README.md)
-[![Language](https://img.shields.io/badge/Language-Python-pink.svg)](https://www.python.org/)
 [![DBMS](https://img.shields.io/badge/DBMS-MongoDB-green.svg)](https://www.mongodb.com/es)
+[![Language](https://img.shields.io/badge/Language-Python-pink.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-GPL-purple.svg)](https://github.com/jrtrillo/proyecto_cc/blob/master/LICENSE)
 
 ## Alumno:
