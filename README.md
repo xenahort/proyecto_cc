@@ -51,7 +51,7 @@ En resumen, los microservicios van a ser:
 	- Microservicio de análisis del comentario.
 	- Microservicio de consulta de datos y resultados.
 
-Como nota final se a de añadir que la comunicación entre los servicios se va a hacer mediante Brokers a partir de [RabbitMQ](https://www.rabbitmq.com/) 
+A parte se estudiará la posibilidad de añadir un **microservicio de gestión de usuarios** para la administración de roles, permisos, login, etc. Como nota final se a de añadir que la comunicación entre los microservicios se va a hacer mediante Brokers a partir de [RabbitMQ](https://www.rabbitmq.com/) 
 
 ## Lenguaje a utilizar:
 El servicio por lo general va a estar escrito en [Python](https://www.python.org/). Dentro de [Python](https://www.python.org/) se va a utilizar un microframework web denominado [flask](http://flask.pocoo.org/). Como añadido se utilizará la librería [mongoAlchemy](https://pythonhosted.org/Flask-MongoAlchemy/) que se utilizará para establecer conexión con la base de datos no relacional. Por otro lado, también se tendrá en cuenta utilizar Javascript para otros módulos.
