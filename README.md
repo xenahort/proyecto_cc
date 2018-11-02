@@ -18,9 +18,9 @@ Máster Profesionalizante en Ingeniería Informática desarrollado durante el cu
 https://jrtrillo.github.io/proyecto_cc/
 
 ## Descripción del proyecto:
-El ciberbullying es una forma de acoso que está en alza durante los últimos años, para poder prevenirlo a una edad temprana se propone realizar un detector de ciberbullying para redes sociales, con el fin de dectectar si un comentario contiene palabras o conjuntos de palabras que se pueden calificar de acoso o no contiene.
+El ciberbullying es una forma de acoso que está en alza durante los últimos años, para poder prevenirlo a una edad temprana se propone realizar un detector de ciberbullying para redes sociales, con el fin de decidir si un comentario contiene palabras o conjuntos de palabras que se pueden calificar de acoso o no contiene.
 
-La red social elegida para realizar este proyecto es la red social denominada Twitter, debido a que con su API se puede obtener el comentario de un perfil público, esto último es muy importante ya que, si el perfil es privado por la Ley Orgánica 15/1999 de 13 de diciembre de Protección de Datos de Carácter Personal, (LOPD) se prohibe obtener sus comentarios.
+La red social elegida para realizar este proyecto es la red social denominada Twitter, debido a que con su API se puede obtener el comentario de un perfil público, esto último es muy importante ya que, si el perfil es privado por la Ley Orgánica 15/1999 de 13 de diciembre de Protección de Datos de Carácter Personal, (LOPD) se prohíbe obtener sus comentarios.
 
 La base de datos que se va a utilizar es la base de datos denominada  [bullyingV3.0](http://research.cs.wisc.edu/bullying/data.html), esta base de datos es pública y contiene más de 7000 comentarios de los cuales a día de hoy solo se puede tener acceso a 4293 comentarios.
 
