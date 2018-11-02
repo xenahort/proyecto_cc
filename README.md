@@ -1,22 +1,17 @@
 # proyecto_cc
-##Alumno: 
-
+##Alumno:
 Jose Ramón Trillo Vílchez
 
 ##Asigunatura: 
-
 Cloud Computing
 
 ##Master: 
-
 Máster Profesionalizante en Ingeniería Informática desarrollado durante el curso 2018/2019
 
 ##Enlace: 
-
 https://jrtrillo.github.io/proyecto_cc/
 
 ##Descripción del proyecto:
-
 El ciberbullying es una forma de acoso que está en alza durante los últimos años, para poder prevenirlo a una edad temprana se propone realizar un detector de ciberbullying para redes sociales, con el fin de dectectar si un comentario contiene palabras o conjuntos de palabras que se pueden calificar de acoso o no contiene.
 
 La red social elegida para realizar este proyecto es la red social denominada Twitter, debido a que con su API se puede obtener el comentario de un perfil público, esto último es muy importante ya que, si el perfil es privado por la Ley Orgánica 15/1999 de 13 de diciembre de Protección de Datos de Carácter Personal, (LOPD) se prohibe obtener sus comentarios.
@@ -26,7 +21,6 @@ La base de datos que se va a utilizar es la base de datos denominada  [bullyingV
 Por último el procedimiento para preprocesar y analizar los comentarios va a estar basado en Natural Lenguaje Process (NLP).
 
 ##Arquitectura: 
-
 Aunque para la resolución de este problema se puede escoger cualquier arquitectura, ya sea monolítica, basada en el paso de mensajes o basada en microservicios. Se ha decantado por utilizar la arquitectura basada en microservicios por los siguientes motivos:
 		
 		- Cada microservicio se puede desplegar de forma independiente.
