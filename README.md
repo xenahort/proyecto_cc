@@ -47,7 +47,7 @@ Para la comunicación entre estos servicios se ha decidido utilizar brokers a pa
 En resumen los microservicios van a ser:
 
 	- Microservicio de conexión con la base de datos NoSQL MongoDB.
-	- Microservicio de obtención de resultado.
+	- Microservicio de obtención de comentario.
 	- Microservicio de tokenización.
 	- Microservicio de análisis del comentario.
 	- Microservicio de consulta de datos y resultados.
