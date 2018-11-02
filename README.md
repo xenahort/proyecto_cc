@@ -43,10 +43,9 @@ Una vez que se obtiene la matriz, el usuario puede escoger el método para anali
 
 Por último, se guardará el resultado del comentario obtenido, se actualizará la base de datos y se mostrará por pantalla. Además, el sistema también cuenta con una API REST para poder consultar los datos y otros resultados. 
 
-Para la comunicación entre estos servicios se ha decidido utilizar brokers a partir del sistema de manejo de colas RabbitMQ.
 En resumen los microservicios van a ser:
 
-	- Microservicio de conexión con la base de datos NoSQL [MongoDB](https://www.mongodb.com/es).
+	- Microservicio de conexión con la base de datos NoSQL MongoDB.
 	- Microservicio de obtención de comentario.
 	- Microservicio de tokenización.
 	- Microservicio de análisis del comentario.
