@@ -1,9 +1,9 @@
 # proyecto_cc
 
-[![Status](https://img.shields.io/badge/Status-Documenting-green.svg)](https://github.com/jrtrillo/proyecto_cc/blob/master/README.md)
-[![Language](https://img.shields.io/badge/Language-Python-blue.svg)](https://www.python.org/)
-[![DBMS](https://img.shields.io/badge/DBMS-MongoDB-orange.svg)](https://www.mongodb.com/es)
-[![License](https://img.shields.io/badge/License-GPL-red.svg)](https://github.com/jrtrillo/proyecto_cc/blob/master/LICENSE)
+[![Status](https://img.shields.io/badge/Status-Documenting-blue.svg)](https://github.com/jrtrillo/proyecto_cc/blob/master/README.md)
+[![Language](https://img.shields.io/badge/Language-Python-pink.svg)](https://www.python.org/)
+[![DBMS](https://img.shields.io/badge/DBMS-MongoDB-green.svg)](https://www.mongodb.com/es)
+[![License](https://img.shields.io/badge/License-GPL-purple.svg)](https://github.com/jrtrillo/proyecto_cc/blob/master/LICENSE)
 
 ## Alumno:
 Jose Ramón Trillo Vílchez
