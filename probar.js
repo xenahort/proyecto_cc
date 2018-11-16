@@ -1,6 +1,5 @@
 var request = require('supertest'),
 	app = require('./index.js');
-var request = require('supertest');
 var {datos,historial,size,anhade,editar,borrardatos,buscartwitter,tweetfecha,tweetfechaprecisa,tweetconrespectouser,tweetmaslike,tweetmasretweet}=require("./comentario.js");
 assert = require('assert');
 
@@ -84,7 +83,7 @@ describe( "Test de cada una de las funciones", function() {
     assert.equal(resultado,0);
     done();
   });
-  it('buscar el conjunto de twitter de una fecha',function(done){
+  it('buscar el conjunto de tweets de una fecha',function(done){
   	var idt = 1110; 
   	var testea = tweetfecha(idt,idt,idt);
     assert.equal(testea,0);
