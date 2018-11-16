@@ -7,4 +7,4 @@ before_install:
     - npm install --save-dev supertest
 after_success: 
     - 'mocha probar.js'
-    -  exit
+    - 'exit'
