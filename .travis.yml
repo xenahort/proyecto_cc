@@ -3,7 +3,6 @@ node_js:
   - "lts/*"
   - "node"
 before_install:
-    - npm install test
     - npm install mocha -g
     - npm install mocha --save-dev
     - npm install --save-dev supertest

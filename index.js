@@ -20,7 +20,7 @@ app.get('/datos', function (req, res) {
 //crear
 app.post('/datos/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet', function(req,res){
 
-  anhade(req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params,nretweet);
+  anhade(req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
 
   res.send("comentario creado: "+JSON.stringify(historial[size+1]));
 
@@ -28,7 +28,7 @@ app.post('/datos/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nl
 //editar
 app.put('/datos/:i/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet',function(req, res){
 
-  editar(req.params.i,req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params,nretweet);
+  editar(req.params.i,req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
 
 
   res.send("comentario modificado "+JSON.stringify(historial[req.params.i]));
@@ -51,7 +51,7 @@ app.delete('/datos/:i',function(req,res){
 //module.exports = app;
 var port = process.env.PORT || 3000;
 if(!module.parent){
-  app.listen(3000);
+  app.listen(port);
   console.log('el servidor está funcionando en el puerto ' + port + '/');
 }
 
