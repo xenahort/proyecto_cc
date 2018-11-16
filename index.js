@@ -49,6 +49,7 @@ app.delete('/datos/:i',function(req,res){
 //});
 
 //module.exports = app;
+var port = process.env.PORT || 3000;
 if(!module.parent){
   app.listen(3000);
   console.log('el servidor está funcionando en el puerto ' + port + '/');
