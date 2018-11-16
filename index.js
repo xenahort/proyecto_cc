@@ -38,7 +38,7 @@ app.put('/datos/:i/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:
 //borrar
 app.delete('/datos/:i',function(req,res){
 
-  salida=borrardatos(req.params.i)
+  salida=borrardatos(req.params.i);
   res.send("comentario borrado: "+JSON.stringify(salida));
 });
 
