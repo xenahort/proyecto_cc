@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var {datos,historial,size,anhade,editar,borrardatos,buscartwitter,tweetfecha,tweetfechaprecisa,tweetconrespectouser,tweetmaslike,tweetmasretweet}=require("./comentario.js");
-
+var port = process.env.PORT || 5000;
 //rCrear el ok
 app.get('/', function (req, res) {
   res.send({
@@ -44,10 +44,9 @@ app.delete('/datos/:i',function(req,res){
 
 //se ha realizado esta modificación  en el listen en el ejercicio 4 debido a que, si no se realiza esto
 //el test en travis no para y se queda continuamente ejecutando
-var port=process.env.PORT || 5000
 if(!module.parent){
   app.listen(port);
-  console.log('El servicio está corriendo en el puerto si no para la has liado: ' + port );
+  console.log('el servidor está funcionando en el puerto ' + port + '/');
 }
 
-module.exports = app
+module.exports = app;
