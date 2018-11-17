@@ -4,7 +4,7 @@ var {datos,historial,size,anhade,editar,borrardatos,buscartwitter,tweetfecha,twe
 assert = require('assert');
 
 describe( "Test de la API rest", function() {
-  it('main get, respond OK', function (done) {
+  it('Test para devolver OK', function (done) {
   request(app)
     .get('/')
     .expect('Content-Type', 'application/json; charset=utf-8')
@@ -12,7 +12,7 @@ describe( "Test de la API rest", function() {
     done();
   });
 
-  it('Get to /datos', function(done){
+  it('Test de get', function(done){
     request(app)
       .get('/datos')
       .expect('Content-Type','application/json; charset=utf-8')
@@ -20,7 +20,7 @@ describe( "Test de la API rest", function() {
       done();
   });
 
-  it('Post to /datos', function(done){
+  it('Test de post', function(done){
     request(app)
       .post('/datos/78/83/0/5/12/2018/7/7/12/12')
       .expect('Content-Type','application/json; charset=utf-8')
@@ -31,7 +31,7 @@ describe( "Test de la API rest", function() {
       done();
   });
 
-  it('Put to /datos', function(done){
+  it('Test de put', function(done){
     request(app)
       .put('/datos/1/78/83/0/5/12/2018/7/7/12/12')
       .expect('Content-Type','application/json; charset=utf-8')
@@ -42,9 +42,9 @@ describe( "Test de la API rest", function() {
       done();
   });
 
-  it('Delete to /datos', function(done){
+  it('Test de delete', function(done){
     request(app)
-      .delete('/datos/0')
+      .delete('/datos/1')
       .expect('Content-Type','application/json; charset=utf-8')
       .expect(200)
       .expect(function(err,result){

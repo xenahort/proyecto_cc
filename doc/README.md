@@ -50,6 +50,32 @@ A cada una de estás variables se les realizó una función llamada de dar la va
 	- Buscar el conjunto de tweets de una fecha precisa: busca en la base de datos todos los tweets escritos en un momento preciso.
 	- Buscar el conjunto de tweets con respecto a un id de usuario: busca todos los tweets de un usuario en la base datos.
 	- Buscar el tweets con más likes de un usuario: busca el tweet del usuario que tenga más likes.
-	- Buscar el  tweets con más retweets de un usuario: busca el tweet del usuario que tenga más retweets.
+	- Buscar el tweets con más retweets de un usuario: busca el tweet del usuario que tenga más retweets.
 	
-Toda esta información, mientras se implementa la base de datos, se guarda en un array del objeto datos llamado  
+Toda esta información, mientras se implementa la base de datos, se guarda en un array del objeto datos llamado historial.
+
+Una vez realizado el archivo index.js e comentario.js, se procede a realizar el ejercicio 4 y creando el archivo probar.js. Lo primero que se debe hacer es realizar los siguientes comandos: 
+	
+	npm install mocha -g
+	npm install mocha --save-dev
+	npm install --save-dev supertest 
+
+Con esto se instala el supertest y mocha que nos permitirá ejecutar los test que se programen. Una vez escrito el ejercicio cuatro instalado mocha y supertest y verificar que se realiza perfectamente el test utilizando:
+
+	mocha probar.js
+
+Se procede a crear el test de la práctica, para ello se reutiliza el nombre del archivo probar.js y se realiza un test para cada una de las funciones mencionadas y para el post, put, delete, get y verificar el OK. 
+
+Para continuar con el análisis, se utiliza Travis IC y se crea un fichero .travis.yml con el siguiente código:
+
+	language: node_js
+	node_js:
+  		- "node"
+	before_install:
+    	- npm install mocha -g
+    	- npm install mocha --save-dev
+    	- npm install --save-dev supertest
+	after_success: 
+    	- 'mocha probar.js'
+
+Por último, 
