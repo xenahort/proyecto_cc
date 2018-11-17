@@ -21,24 +21,20 @@ app.get('/datos', function (req, res) {
 app.post('/datos/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet', function(req,res){
 
   anhade(req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
-
-  res.send("comentario creado: "+JSON.stringify(historial[size+1]));
-
+  res.sendStatus(200);
 });
 //editar
 app.put('/datos/:i/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet',function(req, res){
 
   editar(req.params.i,req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
-
-
-  res.send("comentario modificado "+JSON.stringify(historial[req.params.i]));
+  res.sendStatus(200);
 
 });
 //borrar
 app.delete('/datos/:i',function(req,res){
 
   salida=borrardatos(req.params.i);
-  res.send("comentario borrado: "+JSON.stringify(salida));
+  res.sendStatus(200);
 });
 
 //se ha realizado esta modificación  en el listen en el ejercicio 4 debido a que, si no se realiza esto
