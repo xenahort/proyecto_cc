@@ -54,6 +54,10 @@ A cada una de estás variables se les realizó una función llamada de dar la va
 	
 Toda esta información, mientras se implementa la base de datos, se guarda en un array del objeto datos llamado historial.
 
+Para ver que funciona bien se realiza el comando:
+	
+	node index.js
+
 Una vez realizado el archivo index.js e comentario.js, se procede a realizar el ejercicio 4 y creando el archivo probar.js. Lo primero que se debe hacer es realizar los siguientes comandos: 
 	
 	npm install mocha -g
@@ -78,4 +82,17 @@ Para continuar con el análisis, se utiliza Travis IC y se crea un fichero .trav
 	after_success: 
     	- 'mocha probar.js'
 
-Por último, 
+Una vez que funciona todos los test y el index.js también funciona correctamente. Se procede a desplegar el proyecto en Heroku. Para ello, se crea el archivo Procfile que contiene:
+
+	web: node index.js
+
+También se modifica el archivo package.json para  ejercutar los scripts que se habían escrito. Para finalizar, se procede a hacer el despliegue en Heroku para ello nos apoyamos en el ejercicio número 8 y se realizan los siguientes comandos:
+
+	-git init
+	-git add .
+	-git commit -am "Initial commit"
+	-heroku create 
+	-git push heroku master
+	-heroku open
+
+Si todo ha funcionado se tiene que desplegar una página en nuestro caso es [enlace](https://salty-retreat-32943.herokuapp.com/).
