@@ -86,7 +86,7 @@ function anhade(idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretweet)
   datos.susminuto(min);
   datos.suslike(nlikes);
   datos.susretweet(nretweet);
-  historial.push(archivo);
+  historial.push(datos);
   size=size+1;
 
   return size;
