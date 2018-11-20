@@ -75,20 +75,17 @@ historial=[];
 size=0;
 
 function anhade(idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretweet){
-  let archivo = {};
-  for (let partes in datos) {
-    archivo[partes] = datos[partes];
-  }
-  archivo.sustidtwitter(idtwitter);
-  archivo.sustiduser(iduser);
-  archivo.suslabel(etiqueta);
-  archivo.susday(dia);
-  archivo.susmonth(mes);
-  archivo.susyear(anho);
-  archivo.sushora(hora);
-  archivo.susminuto(min);
-  archivo.suslike(nlikes);
-  archivo.susretweet(nretweet);
+
+  datos.sustidtwitter(idtwitter);
+  datos.sustiduser(iduser);
+  datos.suslabel(etiqueta);
+  datos.susday(dia);
+  datos.susmonth(mes);
+  datos.susyear(anho);
+  datos.sushora(hora);
+  datos.susminuto(min);
+  datos.suslike(nlikes);
+  datos.susretweet(nretweet);
   historial.push(archivo);
   size=size+1;
 
