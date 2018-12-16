@@ -9,64 +9,64 @@ var datos = {
   min:0,
   nlikes:0,
   nretweet:0,
-  sustidtwitter: function(idtwitter) {
+  SustIdTwitter: function(idtwitter) {
     this.idtwitter=idtwitter;
   },
-  sustiduser: function(iduser) {
+  SustIdUser: function(iduser) {
     this.iduser=iduser;
   },
-  suslabel: function(etiqueta) {
+  SusLabel: function(etiqueta) {
     this.etiqueta=etiqueta;
   },
-  susday: function(dia){
+  SusDay: function(dia){
     this.dia=dia;
   },
-  susmonth: function(mes){
+  SusMonth: function(mes){
     this.mes=mes;
   },
-  susyear: function(anho){
+  SusYear: function(anho){
     this.anho=anho;
   },
-  sushora: function(hora){
+  SusHora: function(hora){
     this.hora=hora;
   },
-  susminuto: function(min){
+  SusMinuto: function(min){
     this.min=min;
   },
-  suslike: function(nlikes){
+  SusLike: function(nlikes){
     this.nlikes=nlikes;
   },
-  susretweet: function(nretweet){
+  SusRetweet: function(nretweet){
     this.nretweet=nretweet;
   },
-  daridtwitter: function(){
+  DarIdTwitter: function(){
     return idtwitter;
   },
-  dariduser: function(){
+  DarIdUser: function(){
     return iduser;
   },
-  darlabel: function(){
+  DarLabel: function(){
     return etiqueta;
   },
-  darday: function() {
+  DarDay: function() {
     return dia;
   },
-  darmonth: function(){
+  DarMonth: function(){
     return mes;
   },
-  daryear: function(){
+  DarYear: function(){
     return anho;
   },
-  darhora: function(){
+  DarHora: function(){
     return hora;
   },
-  darmin: function(){
+  DarMin: function(){
     return min;
   },
-  darnlikes: function(){
+  DarNLikes: function(){
     return nlikes;
   },
-  darnretweet: function(){
+  DarNRetweet: function(){
     return nretweet;
   }
 }
@@ -76,16 +76,16 @@ size=0;
 
 function anhade(idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretweet){
 
-  datos.sustidtwitter(idtwitter);
-  datos.sustiduser(iduser);
-  datos.suslabel(etiqueta);
-  datos.susday(dia);
-  datos.susmonth(mes);
-  datos.susyear(anho);
-  datos.sushora(hora);
-  datos.susminuto(min);
-  datos.suslike(nlikes);
-  datos.susretweet(nretweet);
+  datos.SustIdTwitter(idtwitter);
+  datos.SustIdUser(iduser);
+  datos.SusLabel(etiqueta);
+  datos.SusDay(dia);
+  datos.SusMonth(mes);
+  datos.SusYear(anho);
+  datos.SusHora(hora);
+  datos.SusMinuto(min);
+  datos.SusLike(nlikes);
+  datos.SusRetweet(nretweet);
   historial.push(datos);
   size=size+1;
 
@@ -94,31 +94,31 @@ function anhade(idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretweet)
 
 function editar(i,idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretweet){
 
-  historial[i].sustidtwitter(idtwitter);
-  historial[i].sustiduser(iduser);
-  historial[i].suslabel(etiqueta);
-  historial[i].susday(dia);
-  historial[i].susmonth(mes);
-  historial[i].susyear(anho);
-  historial[i].sushora(hora);
-  historial[i].susminuto(min);
-  historial[i].suslike(nlikes);
-  historial[i].susretweet(nretweet);
+  historial[i].SustIdTwitter(idtwitter);
+  historial[i].SustIdUser(iduser);
+  historial[i].SusLabel(etiqueta);
+  historial[i].SusDay(dia);
+  historial[i].SusMonth(mes);
+  historial[i].SusYear(anho);
+  historial[i].SusHora(hora);
+  historial[i].SusMinuto(min);
+  historial[i].SusLike(nlikes);
+  historial[i].SusRetweet(nretweet);
 
   return size;
 }
 
-function borrardatos(i){
+function BorrarDatos(i){
   size=size-1;
   salida=historial.splice(i,1);
   return salida;
 }
 
-function buscartwitter(idtwitte){
+function BuscarTwitter(idtwitte){
   var verificar = 0;
   for (var i = 0; i < size;i++) {
     if(verificar <= 0){
-      if(idtwitte == historial[i].daridtwitter()){
+      if(idtwitte == historial[i].DarIdTwitter()){
       verificar=1;
       }
     }
@@ -126,14 +126,14 @@ function buscartwitter(idtwitte){
   return verificar;
 }
 
-function tweetfecha(dia,mes,anho){
+function TweetFecha(dia,mes,anho){
   let archivo = {};
   var longitud = 0;
   for (var i = 0; i < size;i++){
-    if(dia == historial[i].darday()){
-      if (mes == historial[i].darmonth()) {
-        if(anho == historial[i].daryear()){
-          archivo.push(historial[i].daridtwitter());
+    if(dia == historial[i].DarDay()){
+      if (mes == historial[i].DarMonth()) {
+        if(anho == historial[i].DarYear()){
+          archivo.push(historial[i].DarIdTwitter());
           longitud = longitud + 1;
         }
       }
@@ -141,16 +141,16 @@ function tweetfecha(dia,mes,anho){
   }
   return longitud;
 }
-function tweetfechaprecisa(dia,mes,anho,hora,min){
+function TweetFechaPrecisa(dia,mes,anho,hora,min){
   let archivo = {};
   var longitud = 0;
   for (var i = 0; i < size;i++){
-    if(dia == historial[i].darday()){
-      if (mes == historial[i].darmonth()) {
-        if(anho == historial[i].daryear()){
-          if(hora == historial[i].darhora()){
-            if(min == historial[i].darmin()){
-              archivo.push(historial[i].daridtwitter());
+    if(dia == historial[i].DarDay()){
+      if (mes == historial[i].DarMonth()) {
+        if(anho == historial[i].DarYear()){
+          if(hora == historial[i].DarHora()){
+            if(min == historial[i].DarMin()){
+              archivo.push(historial[i].DarIdTwitter());
               longitud = longitud + 1;
             }  
           }
@@ -160,44 +160,91 @@ function tweetfechaprecisa(dia,mes,anho,hora,min){
   }
   return longitud;
 }
-function tweetconrespectouser(iduser){
+function TweetConRespectoUser(iduser){
   let archivo = {};
   var longitud = 0;
   for (var i = 0; i < size;i++){
-        if (iduser == historial[i].dariduser()) {
-            archivo.push(historial[i].daridtwitter());
+        if (iduser == historial[i].DarIdUser()) {
+            archivo.push(historial[i].DarIdTwitter());
             longitud = longitud + 1;
         }
   }
   return longitud;
 }
-function tweetmaslike(iduser){
+function TweetMasLike(iduser){
   let archivo = {};
   var maslike = 0;
   var j = 0;
   for (var i = 0; i < size;i++){
-        if (iduser == historial[i].dariduser()) {
-          if(maslike < historial[i].darnlikes()){
-            maslike = historial[i].darnlikes();
+        if (iduser == historial[i].DarIdUser()) {
+          if(maslike < historial[i].DarNLikes()){
+            maslike = historial[i].DarNLikes();
             j = i;
           }
         }
   }
   return maslike;
 }
-function tweetmasretweet(iduser){
+function TweetMasretweet(iduser){
   let archivo = {};
   var masretweet = 0;
   var j = 0;
   for (var i = 0; i < size;i++){
-        if (iduser == historial[i].dariduser()) {
-          if(masretweet < historial[i].darnretweet()){
-            masretweet = historial[i].darnretweet();
+        if (iduser == historial[i].DarIdUser()) {
+          if(masretweet < historial[i].DarNRetweet()){
+            masretweet = historial[i].DarNRetweet();
             j = i;
           }
         }
   }
   return masretweet;
+}
+function TweetsAntesAnho(dia,mes,anho){
+  let archivo = {};
+  var longitud = 0;
+  for (var i = 0; i < size;i++){
+    if(anho < historial[i].DarYear()){
+          archivo.push(historial[i].DarIdTwitter());
+          longitud = longitud + 1;
+    }
+  }
+  
+  return longitud;
+}
+function TweetsDespuesAnho(dia,mes,anho){
+  let archivo = {};
+  var longitud = 0;
+  for (var i = 0; i < size;i++){
+    if(anho > historial[i].DarYear()){
+      archivo.push(historial[i].DarIdTwitter());
+      longitud = longitud + 1;         
+    }
+  }
+  
+  return longitud;
+}
+function EtiquetasPositivas(){
+  let archivo = {};
+  var longitud = 0;
+  for (var i = 0; i < size;i++){
+    if(historial.DarLabel() == 1){
+      archivo.push(historial[i].DarIdTwitter());
+      longitud = longitud + 1;         
+    }
+  } 
+  return longitud;
+}
+function EtiquetasNegativas(){
+  let archivo = {};
+  var longitud = 0;
+  for (var i = 0; i < size;i++){
+    if(historial.DarLabel() == 0){
+      archivo.push(historial[i].DarIdTwitter());
+      longitud = longitud + 1;         
+    }
+  }
+  
+  return longitud;
 }
 module.exports = {
   datos,
@@ -205,11 +252,15 @@ module.exports = {
   size,
   anhade,
   editar,
-  borrardatos,
-  buscartwitter,
-  tweetfecha,
-  tweetfechaprecisa,
-  tweetconrespectouser,
-  tweetmaslike,
-  tweetmasretweet
+  BorrarDatos,
+  BuscarTwitter,
+  TweetFecha,
+  TweetFechaPrecisa,
+  TweetConRespectoUser,
+  TweetMasLike,
+  TweetMasRetweet,
+  TweetsAntesAnho,
+  TweetsDespuesAnho,
+  EtiquetasPositivas,
+  EtiquetasNegativas
 }

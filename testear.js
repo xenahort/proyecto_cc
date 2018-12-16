@@ -1,6 +1,6 @@
 var request = require('supertest'),
 	app = require('./index.js');
-var {datos,historial,size,anhade,editar,borrardatos,buscartwitter,tweetfecha,tweetfechaprecisa,tweetconrespectouser,tweetmaslike,tweetmasretweet}=require("./comentario.js");
+var {datos,historial,size,anhade,editar,borrardatos,BuscarTwitter,TweetFecha,TweetFechaPrecisa,TweetConRespectoUser,TweetMasLike,TweetMasRetweet,TweetsAntesAnho,TweetsDespuesAnho,EtiquetasPositivas,EtiquetasNegativas}=require("./comentario.js");
 assert = require('assert');
 
 describe( "Test de la API rest", function() {
@@ -73,43 +73,43 @@ describe( "Test de cada una de las funciones", function() {
   it('Borrar comentario', function(done){
       var i = 0;
       assert(i<=size);
-      borrardatos(i);
+      BorrarDatos(i);
       assert.equal(size,0);
       done();
   });
   it('buscar en twitter con una id ',function(done){
   	var idt = 1110;
-	var resultado = buscartwitter(idt);
+	var resultado = BuscarTwitter(idt);
     assert.equal(resultado,0);
     done();
   });
   it('buscar el conjunto de tweets de una fecha',function(done){
   	var idt = 1110; 
-  	var testea = tweetfecha(idt,idt,idt);
+  	var testea = TweetFecha(idt,idt,idt);
     assert.equal(testea,0);
     done();
   });
   it('buscar el conjunto de tweets de una fecha precisa',function(done){
   	var idt = 1110; 
-  	var testea = tweetfechaprecisa(idt,idt,idt,idt,idt);
+  	var testea = TweetFechaPrecisa(idt,idt,idt,idt,idt);
     assert.equal(testea,0);
     done();
   });
   it('buscar el conjunto de tweets con respecto a un id de usuario',function(done){
   	var idt = 1110; 
-  	var testea = tweetconrespectouser(idt);
+  	var testea = TweetConRespectoUser(idt);
     assert.equal(testea,0);
     done();
   });
   it('buscar el tweets con mas likes de un usuario',function(done){
   	var idt = 1110; 
-  	var testea = tweetmaslike(idt);
+  	var testea = TweetMasLike(idt);
     assert.equal(testea,0);
     done();
   });
   it('buscar el  tweets con mas retweets de un usuario',function(done){
   	var idt = 1110; 
-  	var testea = tweetmasretweet(idt);
+  	var testea = TweetMasRetweet(idt);
     assert.equal(testea,0);
     done();
   });

@@ -1,0 +1,30 @@
+---
+  - hosts: all
+    become: true
+    gather_facts: false
+
+    tasks:
+    - name: Instalar git y curl
+      apt:
+        name: ['git', 'curl']
+        state: present
+        update_cache: yes
+
+    - name: Descargar ProyectoCC de GitHub
+      git:
+        repo: https://github.com/jrtrillo/proyecto_cc.git
+        dest: ./proyecto_cc
+
+    - name: Instalar dependencias de package.json
+      raw: cd proyecto_cc; npm install
+
+    - name: Descarga NodeJS
+      raw: curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+
+    - name: Instala NodeJS¡
+      apt: name=nodejs
+
+    - name: Instala NodeJS Process Manager
+      npm: name=pm2 executable=/usr/bin/npm global=yes
+
+    

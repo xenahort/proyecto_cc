@@ -8,7 +8,7 @@
 ## Alumno:
 Jose Ramón Trillo Vílchez
 
-## Asigunatura: 
+## Asignatura: 
 Cloud Computing
 
 ## Master: 
@@ -44,24 +44,27 @@ Una vez que se obtiene la matriz, el usuario puede escoger el método para anali
 Por último, se guardará el resultado del comentario obtenido, se actualizará la base de datos y se mostrará por pantalla. Además, el sistema también cuenta con una API REST para poder consultar los datos y otros resultados. 
 
 En resumen, los microservicios van a ser:
-
+	
+	- Microservicio de una base datos con metadatos de cada comentario.
 	- Microservicio de conexión con la base de datos NoSQL MongoDB.
 	- Microservicio de obtención de comentario.
 	- Microservicio de tokenización.
 	- Microservicio de análisis del comentario.
 	- Microservicio de consulta de datos y resultados.
 
-A parte se estudiará la posibilidad de añadir un **microservicio de gestión de usuarios** para la administración de roles, permisos, login, etc. Como nota final se a de añadir que la comunicación entre los microservicios se va a hacer mediante Brokers a partir de [RabbitMQ](https://www.rabbitmq.com/) 
-
 ## Desplegar
 Despliegue: https://salty-retreat-32943.herokuapp.com/
 
 Para desplegar el microservicio se ha decidido utilizar Heroku, ya que la cuenta de OpenShift no se ha abierto desde que se hizo la petición de acceso. Heroku es gratuito y soportar el lenguaje que se ha elegido para realizar esta aplicación, en este caso Node. Sin embargo muestra una limitación ya que solo permite realizar como máximo 5 proyectos, es fácil de utilizar y el alta es inmediata.
 
-Por otro lado, antes de que la aplicación sea desplegada se pasan unos test realizado y también se utiliza [Travis CI](https://docs.travis-ci.com/). Esta aplicación toma los archivos de Github de cualquier repositorio, busca el archivo .yml y realiza los test que contiene el archivo que se acaba de mencionar. Además la apliación es totalmente gratuita. Para ver más información de lo realizado en el Hito2 se puede ver en el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/README.md)
+Por otro lado, antes de que la aplicación sea desplegada se pasan unos test realizado y también se utiliza [Travis CI](https://docs.travis-ci.com/). Esta aplicación toma los archivos de Github de cualquier repositorio, busca el archivo .yml y realiza los test que contiene el archivo que se acaba de mencionar. Además la aplicación es totalmente gratuita. Para ver más información de lo realizado en el Hito2 se puede ver en el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/README.md)
 
+##Provisión
+Para ver la documentación de la provisión, se debe ver el siguiente enlace
+
+La máquina virtual es:
 ## Lenguaje a utilizar:
-El servicio por lo general va a estar escrito en [Node](https://nodejs.org/en/). Dentro de [Node](https://nodejs.org/en/) se va a utilizar un microframework web denominado [expressj](https://expressjs.com/).  Por otro lado, también se tendrá en cuenta utilizar Python para otros módulos.
+El servicio por lo general va a estar escrito en [Node](https://nodejs.org/en/). Dentro de [Node](https://nodejs.org/en/) se va a utilizar un microframework web denominado [express](https://expressjs.com/).  Por otro lado, también se tendrá en cuenta utilizar Python para otros módulos.
 
 ## Licencia:
 La licencia del software a desarrollar es GNU General Public License v3.0
