@@ -16,3 +16,12 @@ Máster Profesionalizante en Ingeniería Informática desarrollado durante el cu
 
 ## Documentación
 
+El objetivo de este hito es realizar las acciones necesarias para que el microservicio que se está realizando pueda ejecutarse en una máquina virtual, en este caso una máquina virtual de Azure.
+
+### Crear la máquina virtual.
+
+Para crear la máquina virtual se puede realizar de dos formas:
+
+	· Crear la máquina virtual a través de la página de Azure.
+	· Crear la máquina virtual a traves de la terminal.
+
