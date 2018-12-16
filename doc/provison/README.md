@@ -50,3 +50,24 @@ La segunda forma es desde la terminal y se hace de la siguiente forma (se ha seg
 Y así se crea la máquina virtual.
 
 ### Provisonamiento
+
+ El provisonamiento se va a realizar a través de Ansible. Ansible posee algunas ventajas con respecto a otras herrramientas de provisamiento como su fácil ejecución o una interfaz de provisonamiento. Además, está programado en Python.
+
+ Para realizar el provisamiento se va a crear tres archivos:
+
+ 1º playbook.yml: Este archivo contiene la receta de provisomanient. Esta receta realiza lo siguiente:
+ 	· Instala curl.
+ 	· Instala git.
+ 	· Descarga el repositorio del proyecto.
+ 	· Instala NPM.
+ 	· Instala PM2.
+ 	· Instala nodejs junto a con sus dependencias.
+
+2º ansible_hosts: Es el archivo que agrupa los diferentes host yse tiene que especificar:
+	- El nombre de la máquina.
+	- IP púlbica.
+	- El puerto SSH de conexión
+	- El usuario necesario.
+	- El archivo de clave privada ssh de ansible.  
+
+3º ansible.cfg: Es el archivo que hace que cuando el cliente SSH quiera acceder a la máquina no pida autorización para conectarse. Por otro lado, se le pasa la ruta del ansible_host que es el que tiene en cuenta el cliente de ansible.
