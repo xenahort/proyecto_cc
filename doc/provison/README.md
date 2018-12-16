@@ -56,6 +56,7 @@ Y así se crea la máquina virtual.
  Para realizar el provisamiento se va a crear tres archivos:
 
  1º playbook.yml: Este archivo contiene la receta de provisomanient. Esta receta realiza lo siguiente:
+
  	· Instala curl.
  	· Instala git.
  	· Descarga el repositorio del proyecto.
@@ -64,6 +65,7 @@ Y así se crea la máquina virtual.
  	· Instala nodejs junto a con sus dependencias.
 
 2º ansible_hosts: Es el archivo que agrupa los diferentes host yse tiene que especificar:
+
 	- El nombre de la máquina.
 	- IP púlbica.
 	- El puerto SSH de conexión
