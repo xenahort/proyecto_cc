@@ -68,7 +68,7 @@ En nuestro caso la máquina virtual será:
 	· Dirección IP:  13.81.219.190
 	· Tipo de IP Estática.
 
-
+Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/imagen1.JPG)
 ### Provisonamiento
 
  El provisonamiento se va a realizar a través de Ansible. Ansible posee algunas ventajas con respecto a otras herramientas de provisonamiento como su fácil ejecución o una interfaz de provisonamiento. Además, está programado en Python.
