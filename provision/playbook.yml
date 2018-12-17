@@ -16,13 +16,15 @@
         state: present
         update_cache: yes
 
+    
+
+    - name: Se instala NodeJS Process Manager (PM2)
+      npm: name=pm2 executable=/usr/bin/npm global=yes
+
     - name: Se descarga GitHub del repositorio de Jose Ramón Trillo Vílchez
       git:
         repo: https://github.com/jrtrillo/proyecto_cc.git
         dest: ./proyecto_cc
-
-    - name: Se instala NodeJS Process Manager (PM2)
-      npm: name=pm2 executable=/usr/bin/npm global=yes
 
     - name: Se instala las dependencias del package.json
       raw: cd proyecto_cc; npm install
