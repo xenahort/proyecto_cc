@@ -108,3 +108,8 @@ Una vez que ejecutamos su aprovisonamiento nos sale la siguiente [imagen](https:
 
 
 Para verificar que todo es correcto se ve la siguiente imagen [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/resultados1.JPG)
+
+## Prueba de Miguel Goncalves en mi máquina
+
+
+El compañero miguel Goncalves en su ordenador y lo ha realizado todo correctamente quedando la siguiente imagen
