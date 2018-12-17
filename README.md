@@ -33,7 +33,7 @@ Aunque para la resolución de este problema se puede escoger cualquier arquitect
 		- Es fácil de entender.
 		- Facilita la gestión de equipos multifuncionales y autónomos.
 
-Por otro lado, se va a contar con una cuenta con un servicio cloud donde se almacenarán los datos obtenidos, la base de datos es una base de datos no relacional [MongoDB](https://www.mongodb.com/es).
+Por otro lado, se va a contar con una cuenta con un servicio cloud donde se almacenarán los datos obtenidos, la base de datos es una base de datos no relacional [MongoDB](https://www.mongodb.com/es), pero se realizará una vez desarrollada la base datos con metadatos, dicho con más propiedad, el objeto comentario.
 
 El sistema tendrá una página principal donde el usuario podrá poner el ID del comentario **público**, si el comentario es vacío o no existe el ID se volverá a mostrar la página o poner un mensaje de error para que introduzca el ID correcto. 
 
