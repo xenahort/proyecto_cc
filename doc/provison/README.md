@@ -96,7 +96,7 @@ Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com
 
 ## Imagen de nuestra verificación
 
-Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/Verificaci%C3%B3n%20nuestra.JPG).
+Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/Verificaci%C3%B3n%20nuestra1.JPG).
 
 ## Verificación de un compañero: Miguel Goncalves
 
@@ -112,4 +112,4 @@ Para verificar que todo es correcto se ve la siguiente imagen [imagen](https://g
 ## Prueba de Miguel Goncalves en mi máquina
 
 
-El compañero miguel Goncalves en su ordenador y lo ha realizado todo correctamente quedando la siguiente imagen
+El compañero miguel Goncalves en su ordenador y lo ha realizado todo correctamente quedando la siguiente [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/resultados%20de%20miguel%20en%20mi%20m%C3%A1quina.jpg)
