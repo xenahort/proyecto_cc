@@ -104,4 +104,4 @@ Se realiza al compañero Miguel Goncalves. Para ello, lo primero que se hace es 
 
 Una vez que ejecutamos su aprovisonamiento nos sale la siguiente [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/aprovisamientomiguel.JPG).
 
-Cuando nos introducimos, para ver si se ha realizado el despliegue devuelve la siguiente [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/resultados.JPG)
+Cuando nos introducimos, para ver si se ha realizado el despliegue devuelve la siguiente [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/resultados1.JPG)
