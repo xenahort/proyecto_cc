@@ -100,3 +100,8 @@ Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/do
 
 ## Verificación de un compañero: Miguel Goncalves
 
+Se realiza al compañero Miguel Goncalves. Para ello, lo primero que se hace es copiar su archivo .yml y se crea una máquina virtual con el sistema operativo Ubuntu 16 con los puertos 22 y 80 abiertos.
+
+Una vez que ejecutamos su aprovisonamiento nos sale la siguiente [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/aprovisamientomiguel.JPG).
+
+Cuando nos introducimos, para ver si se ha realizado el despliegue devuelve la siguiente [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/resultados.JPG)
