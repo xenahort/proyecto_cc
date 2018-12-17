@@ -93,3 +93,7 @@ Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com
 	- El archivo de clave privada ssh de ansible.  
 
 3º ansible.cfg: Es el archivo que hace que cuando el cliente SSH quiera acceder a la máquina no pida autorización para conectarse. Por otro lado, se le pasa la ruta del ansible_host que es el que tiene en cuenta el cliente de ansible.
+
+## Imagen de nuestra verificación
+
+Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/Verificaci%C3%B3n%20nuestra.JPG)
