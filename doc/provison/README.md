@@ -96,7 +96,7 @@ Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com
 
 ## Imagen de nuestra verificación
 
-Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/Verificaci%C3%B3n%20nuestra.JPG)
+Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/Verificaci%C3%B3n%20nuestra.JPG).
 
 ## Verificación de un compañero: Miguel Goncalves
 
