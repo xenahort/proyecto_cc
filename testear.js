@@ -1,6 +1,6 @@
 var request = require('supertest'),
 	app = require('./index.js');
-var {datos,historial,size,anhade,editar,borrardatos,BuscarTwitter,TweetFecha,TweetFechaPrecisa,TweetConRespectoUser,TweetMasLike,TweetMasRetweet,TweetsAntesAnho,TweetsDespuesAnho,EtiquetasPositivas,EtiquetasNegativas}=require("./comentario.js");
+var {datos,historial,size,anhade,editar,BorrarDatos,BuscarTwitter,TweetFecha,TweetFechaPrecisa,TweetConRespectoUser,TweetMasLike,TweetMasRetweet,TweetsAntesAnho,TweetsDespuesAnho,EtiquetasPositivas,EtiquetasNegativas}=require("./comentario.js");
 assert = require('assert');
 
 describe( "Test de la API rest", function() {
@@ -110,6 +110,28 @@ describe( "Test de cada una de las funciones", function() {
   it('buscar el  tweets con mas retweets de un usuario',function(done){
   	var idt = 1110; 
   	var testea = TweetMasRetweet(idt);
+    assert.equal(testea,0);
+    done();
+  });
+  it('Mostrar los comentarios antes del anho',function(done){
+    var idt = 1110; 
+    var testea = TweetsAntesAnho(idt);
+    assert.equal(testea,0);
+    done();
+  });
+  it('Mostrar los comentarios despues del anho',function(done){
+    var idt = 1110; 
+    var testea = TweetsDespuesAnho(idt);
+    assert.equal(testea,0);
+    done();
+  });
+  it('Mostrar los comentarios con etiquetas negativas',function(done){
+    var testea = EtiquetasNegativas();
+    assert.equal(testea,0);
+    done();
+  });
+  it('Mostrar los comentarios con etiquetas positivas',function(done){
+    var testea = EtiquetasPositivas();
     assert.equal(testea,0);
     done();
   });

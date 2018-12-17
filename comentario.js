@@ -185,7 +185,7 @@ function TweetMasLike(iduser){
   }
   return maslike;
 }
-function TweetMasretweet(iduser){
+function TweetMasRetweet(iduser){
   let archivo = {};
   var masretweet = 0;
   var j = 0;
@@ -199,7 +199,7 @@ function TweetMasretweet(iduser){
   }
   return masretweet;
 }
-function TweetsAntesAnho(dia,mes,anho){
+function TweetsAntesAnho(anho){
   let archivo = {};
   var longitud = 0;
   for (var i = 0; i < size;i++){
@@ -211,7 +211,7 @@ function TweetsAntesAnho(dia,mes,anho){
   
   return longitud;
 }
-function TweetsDespuesAnho(dia,mes,anho){
+function TweetsDespuesAnho(anho){
   let archivo = {};
   var longitud = 0;
   for (var i = 0; i < size;i++){
