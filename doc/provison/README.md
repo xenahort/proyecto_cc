@@ -62,12 +62,14 @@ En nuestro caso la máquina virtual será:
 	· Nombre de la máquina virtual: Ubuntu1.
 	· Nombre del recurso: Hito3.
 	· Tamaño Standard D2s v3 (2 vcpu, 8 GB de memoria).
-	· Sistema operativo: Ubuntu Server 18 LTs.
+	· Sistema operativo: Ubuntu Server 18 LTS.
 	· Ubicación: Oeste de Europa.
 	· Usuario: jrtrillo.
 	· Puertos: 80 y 22.
 	· Dirección IP:  51.144.78.154
 	· Tipo de IP Estática.
+
+Se ha elegido Ubuntu Server 18 LTS porque se puede obtener antes las actualizaciones que con otros sistemas operativos y también, porque al ser un sistema operativo muy usado, existen muchos usuarios que pueden ayudar a la hora de solucionar un error o realizar algún comando que se desconoce.
 
 Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/imagen1.JPG)
 ### Provisonamiento
