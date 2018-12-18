@@ -16,7 +16,7 @@
       args: 
         warn: no
 
-     - name: Se instala NodeJS
+    - name: Se instala NodeJS
       become: yes
       apt: pkg=nodejs state=latest
 
