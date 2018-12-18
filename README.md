@@ -60,7 +60,7 @@ Para desplegar el microservicio se ha decidido utilizar Heroku, ya que la cuenta
 Por otro lado, antes de que la aplicación sea desplegada se pasan unos test realizado y también se utiliza [Travis CI](https://docs.travis-ci.com/). Esta aplicación toma los archivos de Github de cualquier repositorio, busca el archivo .yml y realiza los test que contiene el archivo que se acaba de mencionar. Además la aplicación es totalmente gratuita. Para ver más información de lo realizado en el Hito2 se puede ver en el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/README.md)
 
 ## Provisión
-Para ver la documentación de la provisión, se debe ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison)
+Para ver la documentación de la provisión, se debe ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison).
 
 MV: 51.144.78.154
 
