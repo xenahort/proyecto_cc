@@ -37,4 +37,6 @@
     - name: Se instala NodeJS Process Manager (PM2)
       npm: name=pm2 executable=/usr/bin/npm global=yes
 
+      
+
     
