@@ -59,13 +59,13 @@ Y así se crea la máquina virtual.
 
 En nuestro caso la máquina virtual será:
 
-	· Nombre de la máquina virtual: Ubuntu.
+	· Nombre de la máquina virtual: Ubuntu1.
 	· Nombre del recurso: Hito3.
 	· Sistema operativo: Linux.
 	· Ubicación: Oeste de Europa.
 	· Usuario: jrtrillo.
 	· Puertos: 80 y 22.
-	· Dirección IP:  13.81.219.190
+	· Dirección IP:  51.144.78.154
 	· Tipo de IP Estática.
 
 Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/imagen1.JPG)
@@ -77,12 +77,28 @@ Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com
 
  1º playbook.yml: Este archivo contiene la receta de provisonamiento. Esta receta realiza lo siguiente:
 
- 	· Instala git.
- 	· Instala curl.
- 	· Descarga el repositorio del proyecto.
- 	· Instala NPM.
- 	· Instala PM2.
- 	· Instala nodejs junto a con sus dependencias.
+ 	· Instala git:
+ 		·name: es lo que aparece en la terminal mientras se provisiona.
+ 		·become: es que se ejecute con root.
+ 		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con su estado igual a presente
+ 	· Instala curl:
+ 		·name: es el nombre que aparecerá en la terminal durante el provisonamiento.
+ 		·become: es que se ejecute con root.
+ 		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con el estado de la última versión.
+ 	· Se descarga NodeJS:
+ 		·become: es que se ejecute con root.
+ 		·shell: se ejecuta el comando que se pone en esta línea.
+ 	· Se instala NodeJS:
+ 		·name: es el nombre que aparecerá en la terminal durante el provisonamiento.
+ 		·become: es que se ejecute con root.
+ 		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con el estado de la última versión.
+ 	· Se descarga GitHub del repositorio de Jose Ramón Trillo Vílchez: Se descarga el proyecto de git de Jose Ramón Trillo Vílchez.
+ 	· Se instala las dependencias del package.json:
+ 		·name: es lo que aparece en la terminal mientras se provisiona.
+ 		·raw: instala node dentro de la carpeta.
+ 	· Se instala NodeJS Process Manager (PM2):
+ 		·name: es lo que aparece en la terminal mientras se provisiona.
+ 		·npm: instala un paquete en node. 
 
 2º ansible_hosts: Es el archivo que agrupa los diferentes hosts y se tiene que especificar:
 
@@ -98,9 +114,31 @@ Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com
 
 Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/Verificaci%C3%B3n%20nuestra1.JPG).
 
-## Verificación de un compañero: Miguel Goncalves
+## Funcionamiento:
 
-Se realiza al compañero Miguel Goncalves. Para ello, lo primero que se hace es copiar su archivo .yml y se crea una máquina virtual con el sistema operativo Ubuntu 16 con los puertos 22 y 80 abiertos.
+Lo primero es cambiamos del puerto 3000 al puerto 80.
+
+Una vez ejecutado el provisonamiento y cambiado el puerto, ejecutamos el comando:
+
+	ansible-playbook -i ansible_hosts -b playbook.yml
+
+y realizado el provisonamiento, activamos la máquina virtual y desde la terminal de ubuntu ejecutamos el siguiente comando:
+
+	ssh -i ~/.ssh/id_rsa jrtrillo@51.144.78.154
+
+De esta forma ya estamos dentro de la máquina virtual ubuntu1. Ahora nos movemos a proyecto_cc con el comando:
+
+	cd proyecto_cc
+
+Y ejecutamos el comando:
+
+	sudo node index.js
+
+Sin cerrar la terminal vamos al buscador y ponemos la IP de la máquina virtual y aparecerá status ok si todo es correcto.
+
+## Verificación de un compañero: Miguel Gonçalves
+
+Se realiza al compañero Miguel Gonçalves. Para ello, lo primero que se hace es copiar su archivo .yml y se crea una máquina virtual con el sistema operativo Ubuntu 16 con los puertos 22 y 80 abiertos.
 
 Para ello se realiza el aprovisionamiento, igual que lo hemos realizado con la nuestra.
 
@@ -109,7 +147,7 @@ Una vez que ejecutamos su aprovisonamiento nos sale la siguiente [imagen](https:
 
 Para verificar que todo es correcto se ve la siguiente imagen [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/resultados1.JPG)
 
-## Prueba de Miguel Goncalves en mi máquina
+## Prueba de Miguel Gonçalves en mi máquina
 
 
-El compañero miguel Goncalves en su ordenador y lo ha realizado todo correctamente quedando la siguiente [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/resultados%20de%20miguel%20en%20mi%20m%C3%A1quina.jpg)
+El compañero miguel Gonçalves en su ordenador y lo ha realizado todo correctamente quedando la siguiente [imagen](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/resultados%20de%20miguel%20en%20mi%20m%C3%A1quina.jpg)

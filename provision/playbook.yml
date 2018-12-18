@@ -1,28 +1,22 @@
 ---
-  - hosts: azure
-    become: true
-    gather_facts: false
+  - hosts: ubuntu1
 
     tasks:
-    - name: Se instala git
-      apt:
-        name: ['git']
-        state: present
-        update_cache: yes
-
-    - name: Se instala curl
-      apt:
-        name: ['curl']
-        state: present
-        update_cache: yes
-
+    - name: Instala git
+      become: yes
+      apt: pkg=git state=present
+    
+    - name: Instala curl 
+      become: yes
+      apt: pkg=curl state=latest
+      
     - name: Se descarga NodeJS
       become: yes
       shell: curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
       args: 
         warn: no
 
-    - name: Se instala NodeJS
+     - name: Se instala NodeJS
       become: yes
       apt: pkg=nodejs state=latest
 
@@ -36,7 +30,5 @@
 
     - name: Se instala NodeJS Process Manager (PM2)
       npm: name=pm2 executable=/usr/bin/npm global=yes
-
-      
 
     
