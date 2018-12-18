@@ -40,7 +40,7 @@ app.delete('/datos/:i',function(req,res){
 //se ha realizado esta modificación  en el listen en el ejercicio 4 debido a que, si no se realiza esto
 //el test en travis no para y se queda continuamente ejecutando
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 if(!module.parent){
   app.listen(port);
   console.log('el servidor está funcionando en el puerto ' + port + '/');
