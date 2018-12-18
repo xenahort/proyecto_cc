@@ -61,7 +61,8 @@ En nuestro caso la máquina virtual será:
 
 	· Nombre de la máquina virtual: Ubuntu1.
 	· Nombre del recurso: Hito3.
-	· Sistema operativo: Linux.
+	· Tamaño Standard D2s v3 (2 vcpu, 8 GB de memoria).
+	· Sistema operativo: Ubuntu Server 18 LTs.
 	· Ubicación: Oeste de Europa.
 	· Usuario: jrtrillo.
 	· Puertos: 80 y 22.
