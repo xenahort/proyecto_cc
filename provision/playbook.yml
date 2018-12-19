@@ -2,15 +2,13 @@
   - hosts: ubuntu1
 
     tasks:
-    - name: Instala git
-      become: yes
-      state: present
-      apt: pkg=git
-    
     - name: Instala curl 
       become: yes
-      state: lastest
-      apt: pkg=curl
+      apt: pkg=curl state=lastest
+      
+    - name: Instala git
+      become: yes
+      apt: pkg=git state=present
       
     - name: Se descarga NodeJS
       become: yes
@@ -20,8 +18,7 @@
 
     - name: Se instala NodeJS
       become: yes
-      state: latest
-      apt: pkg=nodejs 
+      apt: pkg=nodejs state=lastest
 
     - name: Se descarga GitHub del repositorio de Jose Ramón Trillo Vílchez
       git:
