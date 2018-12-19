@@ -24,7 +24,7 @@ Antes de comenzar se ha añadido cuatro funciones al proyecto, a saber:
   	·EtiquetasNegativas: Muestra todos los comentarios con etiquetas negativas.
 
 
-El objetivo de este hito es realizar las acciones necesarias para que el microservicio que se está realizando pueda ejecutarse en una máquina virtual, en este caso una máquina virtual de Azure.
+Según el [tema](http://jj.github.io/CC/documentos/temas/Provision), el objetivo de este hito es realizar las acciones necesarias para que el microservicio que se está realizando pueda ejecutarse en una máquina virtual, en este caso una máquina virtual de Azure.
 
 ### Crear la máquina virtual.
 
@@ -69,30 +69,30 @@ En nuestro caso la máquina virtual será:
 	· Dirección IP:  51.144.78.154
 	· Tipo de IP Estática.
 
-Se ha elegido Ubuntu Server 18 LTS porque se puede obtener antes las actualizaciones que con otros sistemas operativos y también, porque al ser un sistema operativo muy usado, existen muchos usuarios que pueden ayudar a la hora de solucionar un error o realizar algún comando que se desconoce.
+Se ha elegido Ubuntu Server 18 LTS porque se puede obtener antes las actualizaciones que con otros sistemas operativos y también, porque al ser un sistema operativo muy usado, existen muchos usuarios que pueden ayudar a la hora de solucionar un error o realizar algún comando que se desconoce. Anque se puede encontrar muchas más ventajas de un sistema ubuntu en el siguiente [enlace](http://informatica-denisfabiantn.blogspot.com/2012/05/ventajas-y-desventajas-de-ubuntu.html)
 
 Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/imagen1.JPG)
-### Provisonamiento
+### Provisionamiento
 
- El provisonamiento se va a realizar a través de Ansible. Ansible posee algunas ventajas con respecto a otras herramientas de provisonamiento como su fácil ejecución o una interfaz de provisonamiento. Además, está programado en Python.
+ El provisionamiento se va a realizar a través de Ansible. Ansible posee algunas ventajas con respecto a otras herramientas de provisionamiento como su fácil ejecución o una interfaz de provisionamiento. Además, está programado en Python.
 
- Para realizar el provisonamiento se va a crear tres archivos:
+ Para realizar el provisionamiento se va a crear tres archivos:
 
- 1º playbook.yml: Este archivo contiene la receta de provisonamiento. Esta receta realiza lo siguiente:
+ 1º playbook.yml: Este archivo contiene la receta de provisionamiento. Esta receta realiza lo siguiente:
 
  	· Instala git:
  		·name: es lo que aparece en la terminal mientras se provisiona.
  		·become: es que se ejecute con root.
  		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con su estado igual a presente
  	· Instala curl:
- 		·name: es el nombre que aparecerá en la terminal durante el provisonamiento.
+ 		·name: es el nombre que aparecerá en la terminal durante el provisionamiento.
  		·become: es que se ejecute con root.
  		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con el estado de la última versión.
  	· Se descarga NodeJS:
  		·become: es que se ejecute con root.
  		·shell: se ejecuta el comando que se pone en esta línea.
  	· Se instala NodeJS:
- 		·name: es el nombre que aparecerá en la terminal durante el provisonamiento.
+ 		·name: es el nombre que aparecerá en la terminal durante el provisionamiento.
  		·become: es que se ejecute con root.
  		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con el estado de la última versión.
  	· Se descarga GitHub del repositorio de Jose Ramón Trillo Vílchez: Se descarga el proyecto de git de Jose Ramón Trillo Vílchez.
@@ -121,11 +121,11 @@ Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/do
 
 Lo primero es cambiamos del puerto 3000 al puerto 80.
 
-Una vez ejecutado el provisonamiento y cambiado el puerto, ejecutamos el comando:
+Una vez ejecutado el provisionamiento y cambiado el puerto, ejecutamos el comando:
 
 	ansible-playbook -i ansible_hosts -b playbook.yml
 
-y realizado el provisonamiento, activamos la máquina virtual y desde la terminal de ubuntu ejecutamos el siguiente comando:
+y realizado el provisionamiento, activamos la máquina virtual y desde la terminal de ubuntu ejecutamos el siguiente comando:
 
 	ssh -i ~/.ssh/id_rsa jrtrillo@51.144.78.154
 
