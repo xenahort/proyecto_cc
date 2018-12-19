@@ -87,14 +87,14 @@ Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com
  	· Instala curl:
  		·name: es el nombre que aparecerá en la terminal durante el provisionamiento.
  		·become: es que se ejecute con root.
- 		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con el estado de la última versión.
+ 		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con su estado igual a presente.
  	· Se descarga NodeJS:
  		·become: es que se ejecute con root.
  		·shell: se ejecuta el comando que se pone en esta línea.
  	· Se instala NodeJS:
  		·name: es el nombre que aparecerá en la terminal durante el provisionamiento.
  		·become: es que se ejecute con root.
- 		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con el estado de la última versión.
+ 		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con su estado igual a presente.
  	· Se descarga GitHub del repositorio de Jose Ramón Trillo Vílchez: Se descarga el proyecto de git de Jose Ramón Trillo Vílchez.
  	· Se instala las dependencias del package.json:
  		·name: es lo que aparece en la terminal mientras se provisiona.
