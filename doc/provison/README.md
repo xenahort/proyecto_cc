@@ -43,7 +43,7 @@ La primera es bastante sencilla y se realiza de la siguiente forma:
 
 De esta forma ya se habrá creado la máquina virtual deseada.
 
-La segunda forma es desde la terminal y se hace de la siguiente forma (se ha seguido el [enlace](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?view=azure-cli-latest) ):
+La segunda forma es desde la terminal y se hace de la siguiente forma (se ha seguido el [enlace](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?view=azure-cli-latest) y el [enlace](https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?tutorial-step=2&view=azure-cli-latest) ):
 
 	1º Instalar azure cli con el siguiente código:
 		- curl -L https://aka.ms/InstallAzureCli | bash
