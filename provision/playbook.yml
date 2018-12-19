@@ -4,11 +4,13 @@
     tasks:
     - name: Instala git
       become: yes
-      apt: pkg=git state=present
+      state: present
+      apt: pkg=git
     
     - name: Instala curl 
       become: yes
-      apt: pkg=curl state=latest
+      state: lastest
+      apt: pkg=curl
       
     - name: Se descarga NodeJS
       become: yes
@@ -18,7 +20,8 @@
 
     - name: Se instala NodeJS
       become: yes
-      apt: pkg=nodejs state=latest
+      state: latest
+      apt: pkg=nodejs 
 
     - name: Se descarga GitHub del repositorio de Jose Ramón Trillo Vílchez
       git:
