@@ -78,7 +78,7 @@ Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com
 
  Para realizar el provisionamiento se va a crear tres archivos:
 
- 1º playbook.yml: Este archivo contiene la receta de provisionamiento. Esta receta realiza lo siguiente:
+ 1º playbook.yml: Este archivo contiene la receta de provisionamiento en ella se instala git, entre otras cosas porque nos descargamos el repositorio desde ahí, se instala curl porque es necesario para la instalación de Node, se instala node porque es el va a lanzar nuestro servicio y se instala pm2 porque es el encargado de mantener nuestro servicio abierto una vez que se haya cerrado la terminal. Esta receta realiza lo siguiente:
 
  	· Instala git:
  		·name: es lo que aparece en la terminal mientras se provisiona.
