@@ -41,8 +41,9 @@ app.delete('/datos/:i',function(req,res){
 //el test en travis no para y se queda continuamente ejecutando
 
 var port = process.env.PORT || 80;
-  app.listen(port, function () {
+if(!module.parent){
+  app.listen(port);
   console.log('el servidor está funcionando en el puerto ' + port + '/');
-});
+}
 
 module.exports = app;
