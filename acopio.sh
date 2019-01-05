@@ -27,7 +27,7 @@ az vm create \
     --size $tamDisco
     --public-ip-address-allocation static 
 
-echo "Creada MV al completo."
+echo "Creada Maquina Virtual al completo."
 
 # Abrimos el puerto 80 para hacer uso de HTTP
 echo "Abrimos puerto 80..."
