@@ -3,7 +3,7 @@
 # Definimos variables
 nombreGrupoRecursos="Hito4_Subs2"
 localizacion="uksouth"
-nombreUser="luis"
+nombreUser="jrtrillo"
 nombreMV="ubunbuCC4"
 imagen="Canonical:UbuntuServer:16.04-LTS:latest"
 tamDisco="Standard_A1_v2"
