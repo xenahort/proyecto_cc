@@ -69,7 +69,7 @@ En nuestro caso la máquina virtual será:
 	· Dirección IP:  51.144.78.154
 	· Tipo de IP Estática.
 
-Se ha elegido Ubuntu Server 18 LTS porque se puede obtener antes las actualizaciones que con otros sistemas operativos y también, porque al ser un sistema operativo muy usado, existen muchos usuarios que pueden ayudar a la hora de solucionar un error o realizar algún comando que se desconoce. Anque se puede encontrar muchas más ventajas de un sistema ubuntu en el siguiente [enlace](http://informatica-denisfabiantn.blogspot.com/2012/05/ventajas-y-desventajas-de-ubuntu.html)
+Se ha elegido Ubuntu Server 18 LTS porque un punto muy importante es la seguridad, ya que los Hackers y/o creadores de virus rara vez atacan a software de Linux y porque es más rápido que otros sistemas disponibles, aunque eso se observa en el siguiente hito. Anque se puede encontrar muchas más ventajas de un sistema ubuntu en el siguiente [enlace](http://informatica-denisfabiantn.blogspot.com/2012/05/ventajas-y-desventajas-de-ubuntu.html)
 
 Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/imagen1.JPG)
 ### Provisionamiento
@@ -119,7 +119,7 @@ Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/do
 
 ## Funcionamiento:
 
-Lo primero es cambiamos del puerto 3000 al puerto 80.
+Lo primero es cambiamos del puerto 3000 al puerto 80, que es donde se ejecutará.
 
 Una vez ejecutado el provisionamiento y cambiado el puerto, ejecutamos el comando:
 
@@ -135,7 +135,7 @@ De esta forma ya estamos dentro de la máquina virtual ubuntu1. Ahora nos movemo
 
 Y ejecutamos el comando:
 
-	sudo node index.js
+	sudo node index.js&
 
 Sin cerrar la terminal vamos al buscador y ponemos la IP de la máquina virtual y aparecerá status ok si todo es correcto.
 
