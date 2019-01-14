@@ -3,7 +3,7 @@ node_js:
   - node
 before_install:
     - npm install mocha -g
-after_success: 
+script: 
     - mocha testear.js --exit 
 deploy:
   provider: heroku
