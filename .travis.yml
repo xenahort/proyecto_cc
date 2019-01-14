@@ -4,7 +4,7 @@ node_js:
 before_install:
     - npm install mocha -g
 after_success: 
-    - mocha --exit testear.js 
+    - mocha testear.js --exit 
 deploy:
   provider: heroku
   api_key:
