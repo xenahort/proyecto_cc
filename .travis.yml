@@ -3,6 +3,8 @@ node_js:
   - node
 before_install:
     - npm install mocha -g
+    - npm install mocha --save-dev
+    - npm install --save-dev supertest
 after_success: 
     - mocha testear.js --exit 
 deploy:
