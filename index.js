@@ -1,28 +1,14 @@
-
-const path = require('path');
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
 var express = require('express');
-var app = express();
-var {datos,historial,size,anhade,editar,borrardatos,buscartwitter,tweetfecha,tweetfechaprecisa,tweetconrespectouser,tweetmaslike,tweetmasretweet}=require("./comentario.js");
+var aplicacion = express();
+var cliente = require('mongodb').MongoClient;
+var url = "mongodb://localhost/database";
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
 
-var link = 'mongodb://localhost/tabla';
-mongoose.connect(link,{ useNewUrlParser: true });
-
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost/mydb";
-
-MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("mydb");
-  dbo.createCollection("app", function(err, res) {
-    if (err) throw err;
-    console.log("Collection created!");
+cliente.connect(url,{ useNewUrlParser: true }, function(err, db) {
+  var dbo = db.db("database");
+  dbo.createCollection("aplicacion", function(err, res) {
+    console.log("Se crea la base de datos");
     db.close();
   });
 });
@@ -40,7 +26,7 @@ var comentario = {
   nretweet:0
 }
 
-function createdata(idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretweet){
+function anhade(idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretweet){
   comentario.idtwitter=idtwitter;
   comentario.iduser=iduser;
   comentario.etiqueta=etiqueta;
@@ -52,9 +38,10 @@ function createdata(idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretw
   comentario.nlikes=nlikes;
   comentario.nretweet=nretweet;
 }
-//app.use(session({ secret: 'passport', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
+
+
 //Crear el ok
-app.get('/', function (req, res) {
+aplicacion.get('/', function (req, res) {
   res.send({
     "status": "OK",
     "ejemplo": { "ruta": "/datos",
@@ -64,16 +51,14 @@ app.get('/', function (req, res) {
 });
 
 //Leer los datos 
-app.get('/datos', function (req, res) {
+aplicacion.get('/datos', function (req, res) {
 
   res.setHeader('Content-Type', 'applicaton/json')
 
-  MongoClient.connect(url, { useNewUrlParser: true },function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("mydb");
+  cliente.connect(url, { useNewUrlParser: true },function(err, db) {
+    var dbo = db.db("database");
     var mysort = { time: 1 };
-    dbo.collection("app").find().sort(mysort).toArray(function(err, result) {
-      if (err) throw err;
+    dbo.collection("aplicacion").find().sort(mysort).toArray(function(err, result) {
       res.send(JSON.stringify(result));
       db.close();
     });
@@ -81,76 +66,68 @@ app.get('/datos', function (req, res) {
 });
 
 //crear
-app.post('/datos/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet', function(req,res){
+aplicacion.post('/datos/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet', function(req,res){
   res.setHeader('Content-Type', 'applicaton/json')
-  createdata(req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
-   MongoClient.connect(url, { useNewUrlParser: true },function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("mydb");
-    dbo.collection("app").insertOne(data, function(err, res) {
-      if (err) throw err;
+  anhade(req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
+   cliente.connect(url, { useNewUrlParser: true },function(err, db) {
+    var dbo = db.db("database");
+    dbo.collection("aplicacion").insertOne(comentario, function(err, res) {
       db.close();
     });
   });
   size=size+1;
-  res.send("Created new position: "+JSON.stringify(data));
+  res.sendStatus(200);
 
 });
- // res.sendStatus(200);
-//});
+
 //editar
-app.put('/datos/:i/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet',function(req, res){
+aplicacion.put('/datos/:i/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet',function(req, res){
   res.setHeader('Content-Type', 'applicaton/json');
-  createdata(req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
+  anhade(req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
   
-  MongoClient.connect(url, { useNewUrlParser: true },function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("mydb");
+  cliente.connect(url, { useNewUrlParser: true },function(err, db) {
+    var dbo = db.db("database");
     var myquery = { latitude: req.params.lat, longitude: req.params.lng, username: req.params.user }; //cambiar
-    var newvalues = { $set: data };
-    dbo.collection("app").updateOne(myquery, newvalues, function(err, res) {
-      if (err) throw err;
+    var newvalues = { $set: comentario }; //cambiar
+    dbo.collection("aplicacion").updateOne(myquery, newvalues, function(err, res) {
       console.log("1 document updated");
       db.close();
     });
   });
-  res.send("Modified value: "+JSON.stringify(data));
+  res.sendStatus(200);
 
 });
 
 
-  //res.sendStatus(200);
-
-//});
 //borrar
-app.delete('/datos/:i',function(req,res){
+aplicacion.delete('/datos/:i',function(req,res){
 
    res.setHeader('Content-Type', 'applicaton/json')
 
-  MongoClient.connect(url, { useNewUrlParser: true },function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("mydb");
-    var myquery = { latitude: req.params.lat, longitude: req.params.lng, username: req.params.user };
-    dbo.collection("app").deleteOne(myquery, function(err, obj) {
-      if (err) throw err;
+  cliente.connect(url, { useNewUrlParser: true },function(err, db) {
+    var dbo = db.db("database");
+    var myquery = { latitude: req.params.lat, longitude: req.params.lng, username: req.params.user }; //cambiar
+    dbo.collection("aplicacion").deleteOne(myquery, function(err, obj) {
       console.log("1 document deleted");
-      res.send("Value deleted: "+JSON.stringify(obj));
+      res.sendStatus(200);
       db.close();
     });
 
   });
   size=size-1;
 });
-//  res.sendStatus(200);
-//});
+
 
 //se ha realizado esta modificación  en el listen en el ejercicio 4 debido a que, si no se realiza esto
 //el test en travis no para y se queda continuamente ejecutando
 
+
 var port = process.env.PORT || 80;
 if(!module.parent){
-  app.listen(port);
+  aplicacion.listen(port);
   console.log('el servidor está funcionando en el puerto ' + port + '/');
 }
 
-module.exports = app;
+module.exports = aplicacion;
+
+
