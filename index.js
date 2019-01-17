@@ -6,9 +6,10 @@ var tamanho=0;
 
 //se crea la base de datos
 cliente.connect(url,{ useNewUrlParser: true }, function(err, db) {
+  console.log("Se crea la base de datos");
   var inst = db.db("database");
   inst.createCollection("aplicacion", function(err, res) { //https://docs.mongodb.com/manual/reference/method/db.createCollection/
-    console.log("Se crea la base de datos");
+    console.log("Creada la base de datos");
     db.close();
   });
 });
