@@ -3,7 +3,7 @@ node_js:
   - node
 before_install:
     - npm install mocha -g
-    - npm install mongodb --save
-    - npm install mongoose validator
+services:
+    - mongodb
 script: 
     - mocha testear.js --exit 
