@@ -4,7 +4,7 @@
 [![DBMS](https://img.shields.io/badge/DBMS-MongoDB-green.svg)](https://www.mongodb.com/es)
 [![Language](https://img.shields.io/badge/Language-Node-pink.svg)](https://nodejs.org/en/)
 [![License](https://img.shields.io/badge/License-GPL-purple.svg)](https://github.com/jrtrillo/proyecto_cc/blob/master/LICENSE)
-
+[![Travis](https://img.shields.io/badge/License-GPL-red.svg)](https://travis-ci.com/jrtrillo/proyecto_cc/jobs/171168118)
 ## Alumno:
 Jose Ramón Trillo Vílchez
 

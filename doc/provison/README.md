@@ -123,7 +123,7 @@ Ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/do
 
 ## Funcionamiento:
 
-Lo primero es cambiamos del puerto 3000 al puerto 80, que es donde se ejecutará.
+Lo primero es cambiamos del puerto 3000 al puerto 80 por tanto, ahora el programa se ejecutará en el puerto 80 y no en el puerto 3000.
 
 Una vez ejecutado el provisionamiento y cambiado el puerto, ejecutamos el comando:
 
