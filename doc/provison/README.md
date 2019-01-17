@@ -69,7 +69,18 @@ En nuestro caso la máquina virtual será:
 	· Dirección IP:  51.144.78.154
 	· Tipo de IP Estática.
 
-Se ha elegido Ubuntu Server 18 LTS porque "un punto muy importante es la seguridad, ya que los Hackers y/o creadores de virus rara vez atacan a software de Linux"[enlace](http://informatica-denisfabiantn.blogspot.com/2012/05/ventajas-y-desventajas-de-ubuntu.html). Aunque se pueden encontrar muchas más ventajas de un sistema ubuntu en el siguiente [enlace](http://informatica-denisfabiantn.blogspot.com/2012/05/ventajas-y-desventajas-de-ubuntu.html)
+Se ha elegido Ubuntu Server 18 LTS porque los paquetes cuando se instalan, en el aprovisonamiento, utilizan apt-get y si se decide utilizar otro sistema operativo, como por ejemplo Centos, se tendría que cambiar. [enlace](https://www.hostinger.es/tutoriales/centos-vs-ubuntu-elegir-servidor-web/#gref). Por otro lado, se ha utilizado [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) para medir la concurrencia y de su número de solicitudes a realizar para la sesión de benchmarking de los sistemas operativos Ubuntu Server 18 LST y Centos. Se obtiene los siguientes resultados para la concurrencia:
+
+	· Ubuntu Server 18 LST: 59.64 segundos.
+	· Centos : 59.92 segundos.
+
+Y el tiempo para la otra medida es:
+
+	· Ubuntu Server 18 LST: 3.05 segundos.
+	· Centos: 3.18 segundos.
+
+Con estos resultados se decide quedarse con el sistema operativo de Ubuntu Server 18 LTS, aunque la diferencia con Centos no es significativa.
+
 
 Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/imagen1.JPG)
 ### Provisionamiento
@@ -131,7 +142,7 @@ Una vez ejecutado el provisionamiento y cambiado el puerto, ejecutamos el comand
 
 y realizado el provisionamiento, activamos la máquina virtual y desde la terminal de ubuntu ejecutamos el siguiente comando:
 
-	ssh -i ~/.ssh/id_rsa jrtrillo@51.144.78.154
+	ssh -i ~/.ssh/id_rsa jrtrillo@23.97.141.162
 
 De esta forma ya estamos dentro de la máquina virtual ubuntu1. Ahora nos movemos a proyecto_cc con el comando:
 

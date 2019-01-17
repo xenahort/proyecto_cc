@@ -1,5 +1,5 @@
 ---
-  - hosts: ubuntu1
+  - hosts: ubuntu2
 
     tasks:
     - name: Instala curl 
@@ -20,7 +20,7 @@
       become: yes
       apt: pkg=nodejs state=present
 
-     - name: Clave pública MongoDB
+    - name: Clave pública MongoDB
       become: yes
       shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 
@@ -47,7 +47,7 @@
       service:
         name: mongod
         state: started
-
+         
     - name: Se descarga GitHub del repositorio de Jose Ramón Trillo Vílchez
       git:
         repo: https://github.com/jrtrillo/proyecto_cc.git

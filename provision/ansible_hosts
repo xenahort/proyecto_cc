@@ -1,5 +1,5 @@
 [azure]
-ubuntu1 ansible_ssh_port=22 ansible_ssh_host=51.144.78.154
+ubuntu2 ansible_ssh_port=22 ansible_ssh_host=23.97.141.162
 
 [azure:vars]
 ansible_ssh_user=jrtrillo
