@@ -1,13 +1,13 @@
-const mongoose = require('mongoose');
 var express = require('express');
 var aplicacion = express();
 var cliente = require('mongodb').MongoClient;
 var url = "mongodb://localhost/database";
+var tamanho=0;
 
-
+//se crea la base de datos
 cliente.connect(url,{ useNewUrlParser: true }, function(err, db) {
-  var dbo = db.db("database");
-  dbo.createCollection("aplicacion", function(err, res) {
+  var inst = db.db("database");
+  inst.createCollection("aplicacion", function(err, res) {
     console.log("Se crea la base de datos");
     db.close();
   });
@@ -26,40 +26,22 @@ var comentario = {
   nretweet:0
 }
 
-function anhade(idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretweet){
-  comentario.idtwitter=idtwitter;
-  comentario.iduser=iduser;
-  comentario.etiqueta=etiqueta;
-  comentario.dia=dia;
-  comentario.mes=mes;
-  comentario.anho=anho;
-  comentario.hora=hora;
-  comentario.min=min;
-  comentario.nlikes=nlikes;
-  comentario.nretweet=nretweet;
-}
-
-
 //Crear el ok
 aplicacion.get('/', function (req, res) {
   res.send({
     "status": "OK",
     "ejemplo": { "ruta": "/datos",
-    "valor": { "Tamanho de la base de datos": size }
+    "valor": { "Tamanho de la base de datos": tamanho }
     }
-   });
+  });
 });
 
 //Leer los datos 
 aplicacion.get('/datos', function (req, res) {
-
-  res.setHeader('Content-Type', 'applicaton/json')
-
   cliente.connect(url, { useNewUrlParser: true },function(err, db) {
-    var dbo = db.db("database");
-    var mysort = { time: 1 };
-    dbo.collection("aplicacion").find().sort(mysort).toArray(function(err, result) {
-      res.send(JSON.stringify(result));
+    var inst = db.db("database");
+    inst.collection("aplicacion").toArray(function(err, res) {
+      res.sendStatus(200);
       db.close();
     });
   });
@@ -67,30 +49,27 @@ aplicacion.get('/datos', function (req, res) {
 
 //crear
 aplicacion.post('/datos/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet', function(req,res){
-  res.setHeader('Content-Type', 'applicaton/json')
   anhade(req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
    cliente.connect(url, { useNewUrlParser: true },function(err, db) {
-    var dbo = db.db("database");
-    dbo.collection("aplicacion").insertOne(comentario, function(err, res) {
+    var inst = db.db("database");
+    inst.collection("aplicacion").insertOne(comentario, function(err, res) {
       db.close();
     });
   });
-  size=size+1;
+  tamanho=tamanho+1;
   res.sendStatus(200);
 
 });
 
 //editar
 aplicacion.put('/datos/:i/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:minutos/:nlike/:nretweet',function(req, res){
-  res.setHeader('Content-Type', 'applicaton/json');
   anhade(req.params.idtwitter,req.params.iduser,req.params.etiqueta,req.params.dia,req.params.mes,req.params.anho,req.params.hora,req.params.minutos,req.params.nlike,req.params.nretweet);
   
   cliente.connect(url, { useNewUrlParser: true },function(err, db) {
-    var dbo = db.db("database");
-    var myquery = { latitude: req.params.lat, longitude: req.params.lng, username: req.params.user }; //cambiar
-    var newvalues = { $set: comentario }; //cambiar
-    dbo.collection("aplicacion").updateOne(myquery, newvalues, function(err, res) {
-      console.log("1 document updated");
+    var inst = db.db("database");
+    var mq = { idtwitter: req.params.idtwitter, iduser: req.params.iduser, etiqueta: req.params.etiqueta, dia: req.params.dia, mes: req.params.mes, anho: req.params.anho, hora: req.params.hora, min: req.params.minutos, nlikes: req.params.nlike, nretweet: req.params.nretweet};
+    var nvalor = { $set: comentario }; 
+    inst.collection("aplicacion").updateOne(mq, nvalor, function(err, res) {
       db.close();
     });
   });
@@ -101,20 +80,16 @@ aplicacion.put('/datos/:i/:idtwitter/:iduser/:etiqueta/:dia/:mes/:anho/:hora/:mi
 
 //borrar
 aplicacion.delete('/datos/:i',function(req,res){
-
-   res.setHeader('Content-Type', 'applicaton/json')
-
   cliente.connect(url, { useNewUrlParser: true },function(err, db) {
-    var dbo = db.db("database");
-    var myquery = { latitude: req.params.lat, longitude: req.params.lng, username: req.params.user }; //cambiar
-    dbo.collection("aplicacion").deleteOne(myquery, function(err, obj) {
-      console.log("1 document deleted");
+    var inst = db.db("database");
+    var mq = { idtwitter: req.params.idtwitter, iduser: req.params.iduser, etiqueta: req.params.etiqueta, dia: req.params.dia, mes: req.params.mes, anho: req.params.anho, hora: req.params.hora, min: req.params.minutos, nlikes: req.params.nlike, nretweet: req.params.nretweet};
+    inst.collection("aplicacion").deleteOne(mq, function(err, obj) {
       res.sendStatus(200);
       db.close();
     });
 
   });
-  size=size-1;
+  tamanho=tamanho-1;
 });
 
 

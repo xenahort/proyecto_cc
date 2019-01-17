@@ -16,13 +16,13 @@ Máster Profesionalizante en Ingeniería Informática desarrollado durante el cu
 
 ## Documentación
 
-Antes de comenzar se ha añadido cuatro funciones al proyecto, a saber:
+Antes de comenzar se producido el siguiente cambio en el documento index.js. Este es el siguiente:
 
-	·TweetsAntesAnho: Muestra todos los comentarios antes del año indicado.
-  	·TweetsDespuesAnho: Muestra todos los comentarios después del año indicado.
-  	·EtiquetasPositivas: Muestra todos los comentarios con etiquetas positivas.
-  	·EtiquetasNegativas: Muestra todos los comentarios con etiquetas negativas.
+	Se ha sustituido la base de datos que se tenía por una base de datos en MongoDB, sustituyendo las funciones post, put, delete y get y comentando las funciones de búsqueda que se tenían haciendo así una reutilización en un futuro.
 
+Con respecto al reenvio:
+	
+	Aparte de realizar el cambio mencionado, se ha solucionado el problema de travis y también, se ha corregido los problemas de la documentación.
 
 Según el [tema](http://jj.github.io/CC/documentos/temas/Provision), el objetivo de este hito es realizar las acciones necesarias para que el microservicio que se está realizando pueda ejecutarse en una máquina virtual, en este caso una máquina virtual de Azure.
 
@@ -69,7 +69,7 @@ En nuestro caso la máquina virtual será:
 	· Dirección IP:  51.144.78.154
 	· Tipo de IP Estática.
 
-Se ha elegido Ubuntu Server 18 LTS porque un punto muy importante es la seguridad, ya que los Hackers y/o creadores de virus rara vez atacan a software de Linux y porque es más rápido que otros sistemas disponibles, aunque eso se observa en el siguiente hito. Anque se puede encontrar muchas más ventajas de un sistema ubuntu en el siguiente [enlace](http://informatica-denisfabiantn.blogspot.com/2012/05/ventajas-y-desventajas-de-ubuntu.html)
+Se ha elegido Ubuntu Server 18 LTS porque "un punto muy importante es la seguridad, ya que los Hackers y/o creadores de virus rara vez atacan a software de Linux"[enlace](http://informatica-denisfabiantn.blogspot.com/2012/05/ventajas-y-desventajas-de-ubuntu.html). Aunque se pueden encontrar muchas más ventajas de un sistema ubuntu en el siguiente [enlace](http://informatica-denisfabiantn.blogspot.com/2012/05/ventajas-y-desventajas-de-ubuntu.html)
 
 Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/provison/imagen1.JPG)
 ### Provisionamiento
@@ -95,6 +95,10 @@ Aquí se puede ver la imágen de la máquina virtual [enlace](https://github.com
  		·name: es el nombre que aparecerá en la terminal durante el provisionamiento.
  		·become: es que se ejecute con root.
  		·apt: Es el comando que se va a ejecutar y el pkg es el argumento que se le pasa con su estado igual a presente.
+ 	· Se obtiene la clave pública de MongoDB.
+ 	· Se obtiene el repositorio de MongoDB.
+ 	· Se instala MongoDB.
+ 	· Se inicia el servicio de MongoDB.
  	· Se descarga GitHub del repositorio de Jose Ramón Trillo Vílchez: Se descarga el proyecto de git de Jose Ramón Trillo Vílchez.
  	· Se instala las dependencias del package.json:
  		·name: es lo que aparece en la terminal mientras se provisiona.
