@@ -46,7 +46,11 @@ La elección del nombre del grupo recurso va a ser similar a la elección anteri
 
 ### El nombre de la máquina virtual.
 
+La última elección que se va a realizar sin una demostración empírica va a ser la elección del nombre de la máquina virtual. Con esta elección se va a decidir que nombre va a llevar la máquina virtual. La recomendación para elegir este nombre va a ser el nombre de la imágen del sistema operativo que se ha elegido y un número asociado que indicará el número de veces que se ha crea do una máquina virtual con la imagen del sistema operativo. Para este hito el nombre de la máquina virtual va a ser *ubuntu7*. Esto significa que se habían creado con anterioridad seis máquinas virtuales con el sistema operativo Ubuntu Server 18.04 LTS.
 
+Para finalizar, la elección de la imagen del sistema operativo se explicará más adelante.
+
+###La localización. 
 
 
 
