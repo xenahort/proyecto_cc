@@ -25,7 +25,7 @@ A la hora de crear una máquina virtual hay que tener en cuenta los siguiente pa
 
 	El nombre del usuario.
 	El nombre del grupo recurso.
-	El nombre de la máquina con la que se va a realizar.
+	El nombre de la máquina virtual.
 	La localización.
 	La imagen del sistema operativo.
 	El tamaño del disco que se desea.
@@ -42,7 +42,12 @@ En resumen, el nombre de usuario es la forma de darle una autoría a la máquina
 
 ### El nombre del grupo recurso.
 
- 
+La elección del nombre del grupo recurso va a ser similar a la elección anterior. Si en la anterior se escogió por elección propia y sin seguir ningún criterio significativo, en este caso va a suceder lo mismo. El nombre que ha escogido ha sido *hito4* porque de esta forma se puede conocer que las máquinas creadas con este nombre van a pertenecer al hito que se está describiendo. De igual modo, si se desea poner otro nombre porque al usuario le resulte más atractivo o simplemente para representativo se puede realizar sin que el resultado se vea afectado en el tiempo.
+
+### El nombre de la máquina virtual.
+
+
+
 
 
 
