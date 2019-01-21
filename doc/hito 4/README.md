@@ -92,7 +92,7 @@ Ante este resultado queda demostrado que el lugar elegido es West Europe, ya que
 
 ### Tamaño de la imagen.
 
-
+Una vez delimitada la localización procede a la elección 
 
 ### La imagen del sistema operativo.
 
