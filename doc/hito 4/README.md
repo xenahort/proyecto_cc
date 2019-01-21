@@ -52,10 +52,7 @@ Para finalizar, la elección de la imagen del sistema operativo se explicará m�
 
 ### La localización.
 
-La primera elección con demostración empírica va a ser la elección de la localización. La forma de elegir la mejor localización es fijándose en la que posea una latencia menor con el resto. Para ello, se han observado las siguientes web:
-	
-[Web 1](http://www.azurespeed.com/)
-[Web 2](https://azurespeedtest.azurewebsites.net/)
+La primera elección con demostración empírica va a ser la elección de la localización. La forma de elegir la mejor localización es fijándose en la que posea una latencia menor con el resto. Para ello, se han observado las siguientes web: [Web 1](http://www.azurespeed.com/) y [Web 2](https://azurespeedtest.azurewebsites.net/)
 
 
 
