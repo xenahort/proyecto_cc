@@ -1,5 +1,5 @@
 ---
-  - hosts: ubuntu2
+  - hosts: ubuntu7
 
     tasks:
     - name: Instala curl 
