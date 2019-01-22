@@ -88,7 +88,7 @@ Una vez delimitadas las tres localizaciones, West Europe, West UK y South UK, se
 		West UK: 3.76 segundos.
 		South UK: 3.59 segundos.
 
-Ante este resultado queda demostrado que el lugar elegido es West Europe, ya que las correlaciones y el número de solicitudes son bastante menores que el resto.
+Ante este resultado queda demostrado que el lugar elegido es *West Europe*, ya que las correlaciones y el número de solicitudes son bastante menores que el resto.
 
 ### Tamaño de la imagen.
 
@@ -193,6 +193,32 @@ La primera máquina virtual tendrá Ubuntu Server 18 LST y la segunda máquina v
 	· Ubuntu Server 18 LST: 3.15 segundos.
 	· Centos: 3.10 segundos.
 
-Al no existir diferencias significativas de tiempo tanto en concurrencia como en el número de solicitudes. Los test de hipótesis aplicados, tanto a la concurrencia como al número de solicitudes, nos devuelve que la hipótesis alternativa se acepta y, por tanto con respecto a estas dos medidas la diferencia no es significativa. En cambio, en el tiempo de creación de la máquina virtual, si se rechaza la hipótesis y, por consiguiente se decide tomar la imagen de Ubuntu Server 18 LST.
+Al no existir diferencias significativas de tiempo tanto en concurrencia como en el número de solicitudes. Los test de hipótesis aplicados, tanto a la concurrencia como al número de solicitudes, nos devuelve que la hipótesis alternativa se acepta y, por tanto con respecto a estas dos medidas la diferencia no es significativa. En cambio, en el tiempo de creación de la máquina virtual, si se rechaza la hipótesis y, por consiguiente se decide tomar la imagen de *Ubuntu Server 18 LST*.
 
 ## Script
+
+Tras el analisis realizado se va a proceder a realizar el script que nos cree la máquina virtual con las características siguientes:
+
+	nombre de usuario: *jrtrillo*. 
+	nombre de recurso: *hito4*.
+	nombre de la máquina virtual: *ubuntu7*.
+	localización: *West Europe*. 
+	tamaño de la imagen: *B1s Estándar*.
+	imagen del sistema operativo: *Ubuntu Server 18 LST*.
+
+Para la creación del script nos vamos a basar en los comandos mencionados en el [hito 3](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison) pero antes hay que saber como se llama Ubuntu Server 18 LST, B1s Estándar y West Europe. Para ello se ejecutan los siguientes comandos [enlace](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest):
+
+Para el tamaño:
+
+	az vm list-sizes --location westeurope
+
+y el nombre que nos aparece es: Standard_B1s
+
+Para la imagen:
+
+	az vm image list --location westeurope
+
+y se obtiene el nombre Canonical:UbuntuServer:18.04-LTS:18.04.201901140. 
+
+Con esto se puede crear nuestro script que contiene lo siguiente:
+
