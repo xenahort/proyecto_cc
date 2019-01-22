@@ -239,4 +239,4 @@ Una vez creada y aprovisionada se realizan los mismos pasos que se hicieron en e
 
 ## Avance
 
-Se ha añadido al archivo index.js un servicio de LOG de la aplicación. Esto se ha realizado utilizando Bunyan, y su información se puede ver en el siguiente [enlace](https://www.npmjs.com/package/bunyan).
+Se ha añadido al archivo index.js un servicio de LOG. Esto se ha realizado utilizando Bunyan, para ver la información de Bunyan acceder siguiente [enlace](https://www.npmjs.com/package/bunyan).
