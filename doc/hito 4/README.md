@@ -16,11 +16,6 @@ Máster Profesionalizante en Ingeniería Informática desarrollado durante el cu
 
 ## Documentación Hito 4.
 
-## Añadido
-
-Se ha añadido al archivo index.js un servicio de LOG de la aplicación. Esto se ha realizado utilizando Bunyan, y su información se puede ver en el siguiente [enlace](https://www.npmjs.com/package/bunyan)
-
-
 ## Elección de parámetros.
 
 A la hora de crear una máquina virtual hay que tener en cuenta los siguientes parámetros:
@@ -240,3 +235,8 @@ Con esto se puede crear nuestro script que contiene lo siguiente:
 	az vm open-port --resource-group hito4 --name ubuntu7 --port 80 
 
 Una vez creada y aprovisionada se realizan los mismos pasos que se hicieron en el [hito 3](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison).
+
+
+## Avance
+
+Se ha añadido al archivo index.js un servicio de LOG de la aplicación. Esto se ha realizado utilizando Bunyan, y su información se puede ver en el siguiente [enlace](https://www.npmjs.com/package/bunyan).
