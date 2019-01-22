@@ -94,10 +94,61 @@ Ante este resultado queda demostrado que el lugar elegido es West Europe, ya que
 
 Una vez delimitada la localización procede a la elección 
 
+Se poseen los siguientes tamaños para crear la máquina virtual con un coste menor a veinticinco euros y que cubran nuestras necesidades, a saber:
+	
+	A0 Estándar con un precio de 12.55 euros al mes.
+	A0 Básico con un precio de 11.29 euros al mes. 
+	A1 Básico con un precio de 16.94 euros al mes.
+
+El cuadro de características de los tamaños son los siguientes:
+
+	A0 Estándar:
+		VCPU: 1.
+		RAM: 0.75.
+		Discos de datos: 1.
+		E/S Máxima por segundo: 1x500.
+		Almacenamiento: -
+		Compatibilidad de disco premium: No.
+
+	A0 Básico:
+		VCPU: 1.
+		RAM: 0.75.
+		Discos de datos: 1.
+		E/S Máxima por segundo: 1x300.
+		Almacenamiento: -
+		Compatibilidad de disco premium: No.
+
+	A1 Básico:
+		VCPU: 1.
+		RAM: 1.75.
+		Discos de datos: 2.
+		E/S Máxima por segundo: 2x300.
+		Almacenamiento: -
+		Compatibilidad de disco premium: No.
+
+Como se puede apreciar la diferencia entre el A0 estándar y el A0 básico es solo del E/S Máxima por segundo. Aunque la diferencia entre ambas no es significativa se va a proceder a crear tres máquinas virtuales con la localización de West Europe y el mismo sistema operativo. Una vez creadas se mide el tiempo del acoplamiento para ver si la diferencia de dinero merece la pena. Los tiempos son:
+
+	A0 Estándar: 5 min 28 segundos.
+	A0 Básico: 5 min 40 segundos.
+	A1 Básico: 3 min 32 segundos.
+
+El tiempo de acomplamiento muestra que la diferencia de dinero es rentabilizada por la reducción de tiempo, pero para poder confirmar esta hipótesis que se tiene se va a utilizar [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) para medir la concurrencia y el  número de solicitudes a realizar para la sesión de benchmarking, al igual que se hizo anteriormente con la localización. Para ello se utilizan las tres máquinas ya creadas y se obtienen los resultados:
+
+	Concurrencia:
+		A0 Estándar: 60.58 segundos.
+		A0 Básico: 61.12 segundos.
+		A1 Básico: 60.23 segundos.
+
+	Número de solicitudes:
+		A0 Estándar: 3.33 segundos.
+		A0 Básico: 3.45 segundos.
+		A1 Básico: 3.15 segundos.
+
+Con estas tres mediciones se proceden a realizar tres test de hipótesis donde la hipótesis principal es la A1 Básico y la hipótesis alternativa es la A0 Estandar. Tanto como para el primer test,tiempo de acomplamiento, como para el tercero, número de solicitudes, se rechaza la hipótesis. Sin embargo para el segundo test de hipótesis realiado, concurrencia, se acepta la hipótesis, por consecuencia se decide quedarse con el tamaño *A1 Básico*.
+
+
 ### La imagen del sistema operativo.
 
 Para elegir el sistema operativo utillizamos el la documentación del [hito 3](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison). Aparte de utilizar esta herramienta, [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html),
-
-### Acoplamiento.
 
 ## Script
