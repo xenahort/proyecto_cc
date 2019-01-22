@@ -53,7 +53,7 @@ La segunda forma es desde la terminal y se hace de la siguiente forma (se ha seg
 	4º 	Se crea el recuro de la siguiente forma:
 		- az group create --name (Nombre_Recurso) --location (Localización deseada)
 	5º Ahora se crea la máquina virtual de con el siguiente código:
-		- az vm create -m (Nombre_Máquina) -g (Nombre_Recurso) --image (Sistema_Operativo) --admin-username (Nombre_usuario) --generate-ssh-keys.
+		- az vm create -m (Nombre_Máquina) -g (Nombre_Recurso) --image (Sistema_Operativo) --admin-username (Nombre_usuario) --ssh-key-value ~/.ssh/id_rsa.pub.
 
 Y así se crea la máquina virtual.
 
