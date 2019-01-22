@@ -169,12 +169,12 @@ El tiempo de provisonamiento muestra que la diferencia de dinero no se rentabili
 		B1ms Estándar: 3.05 segundos.
 
 
-Con estas tres mediciones se proceden a realizar tres test de hipótesis donde la hipótesis principal es la B1ms Estándar y la hipótesis alternativa es la B1s  Estándar. En los tres test se acepta la hipótesis, por consecuencia se decide quedarse con el tamaño *B1s Estándar*.
+Con estas tres mediciones se proceden a realizar tres test de hipótesis donde la hipótesis principal es la B1msE stándar y la hipótesis alternativa es la B1s Estándar. En los tres test se acepta la hipótesis y si se cambia la hipótesis principal por la hipótesis alternativa se obtiene que las tres hipótesis se rechazan, por consecuencia se decide quedarse con el tamaño *B1s Estándar*.
 
 
 ### La imagen del sistema operativo.
 
-Para finalizar una vez que se tiene escogidas todas las características se procede a elegir el sistema operativo. Al igual que se realizó en el [hito 3](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison), se va a medir  Ubuntu Server 18 LST y Centos. Para ello, se va crear dos máquinas virtuales con las siguientes características:
+Para finalizar una vez que se tiene escogidas todas las características se procede a elegir el sistema operativo. Al igual que se realizó en el [hito 3](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison), se va a medir Ubuntu Server 18 LST y Centos. Para ello, se va crear dos máquinas virtuales con las siguientes características:
 
 	Localización: West Europe.
 	Tamaño: B1s
@@ -193,5 +193,6 @@ La primera máquina virtual tendrá Ubuntu Server 18 LST y la segunda máquina v
 	· Ubuntu Server 18 LST: 3.15 segundos.
 	· Centos: 3.10 segundos.
 
-Se realiza un test de hipótesis con las dos medidas poniendo como hipótesis principal el tiempo de Centos y  
+Al no existir diferencias significativas de tiempo tanto en concurrencia como en el número de solicitudes. Los test de hipótesis aplicados, tanto a la concurrencia como al número de solicitudes, nos devuelve que la hipótesis alternativa se acepta y, por tanto con respecto a estas dos medidas la diferencia no es significativa. En cambio, en el tiempo de creación de la máquina virtual, si se rechaza la hipótesis y, por consiguiente se decide tomar la imagen de Ubuntu Server 18 LST.
+
 ## Script
