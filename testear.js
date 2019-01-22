@@ -54,7 +54,7 @@ describe( "Test de la API rest", function() {
   });
 });
 
-
+/*
 describe( "Test de cada una de las funciones", function() {
   it('Anhade comentario', function(done){
       var prueba = anhade(78,83,0,5,12,2018,7,7,12,12);
@@ -135,4 +135,4 @@ describe( "Test de cada una de las funciones", function() {
     assert.equal(testea,0);
     done();
   });
-});
+});*/
