@@ -99,6 +99,8 @@ Se poseen los siguientes tamaños para crear la máquina virtual con un coste me
 	A0 Estándar con un precio de 12.55 euros al mes.
 	A0 Básico con un precio de 11.29 euros al mes. 
 	A1 Básico con un precio de 16.94 euros al mes.
+	B1s Estándar con un precio de 7.53 euros al mes.
+	B1ms Estándar con un precio de 15.06 euros al mes.
 
 El cuadro de características de los tamaños son los siguientes:
 
@@ -126,25 +128,48 @@ El cuadro de características de los tamaños son los siguientes:
 		Almacenamiento: -
 		Compatibilidad de disco premium: No.
 
-Como se puede apreciar la diferencia entre el A0 estándar y el A0 básico es solo del E/S Máxima por segundo. Aunque la diferencia entre ambas no es significativa se va a proceder a crear tres máquinas virtuales con la localización de West Europe y el mismo sistema operativo. Una vez creadas se mide el tiempo del provisonamiento para ver si la diferencia de dinero merece la pena. Los tiempos son:
+	B1s Estándar:
+		VCPU: 1.
+		RAM: 1.
+		Discos de datos: 2.
+		E/S Máxima por segundo: 400.
+		Almacenamiento: 4 GB
+		Compatibilidad de disco premium: Si.
 
-	A0 Estándar: 5 min 28 segundos.
-	A0 Básico: 5 min 40 segundos.
-	A1 Básico: 3 min 32 segundos.
+	B1ms Estándar:
+		VCPU: 1.
+		RAM: 2.
+		Discos de datos: 2.
+		E/S Máxima por segundo: 800.
+		Almacenamiento: 4 GB
+		Compatibilidad de disco premium: Si.
 
-El tiempo de provisonamiento muestra que la diferencia de dinero es rentabilizada por la reducción de tiempo, pero para poder confirmar esta hipótesis que se tiene se va a utilizar [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) para medir la concurrencia y el  número de solicitudes a realizar para la sesión de benchmarking, al igual que se hizo anteriormente con la localización. Para ello se utilizan las tres máquinas ya creadas y se obtienen los resultados:
+Como se puede apreciar la diferencia entre el A0 estándar y el A0 básico es solo del E/S Máxima por segundo. Aunque la diferencia entre ambas no es significativa se va a proceder a crear cinco máquinas virtuales con la localización de West Europe y el mismo sistema operativo. Una vez creadas se mide el tiempo del provisonamiento para ver si la diferencia de dinero merece la pena. Los tiempos son:
+
+	A0 Estándar: 7 min 28 segundos.
+	A0 Básico: 7 min 40 segundos.
+	A1 Básico: 5 min 32 segundos.
+	B1s Estándar: 3 min 15 segundos.
+	B1ms Estándar: 3 min 5 segundos.
+
+El tiempo de provisonamiento muestra que la diferencia de dinero no se rentabiliza por la reducción de tiempo, pero para poder confirmar esta hipótesis que se tiene se va a utilizar [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) para medir la concurrencia y el  número de solicitudes a realizar para la sesión de benchmarking, al igual que se hizo anteriormente con la localización. Para ello se utilizan las cinco máquinas ya creadas y se obtienen los resultados:
 
 	Concurrencia:
-		A0 Estándar: 60.58 segundos.
-		A0 Básico: 61.12 segundos.
-		A1 Básico: 60.23 segundos.
+		A0 Estándar: 61.58 segundos.
+		A0 Básico: 62.12 segundos.
+		A1 Básico: 61.23 segundos.
+		B1s Estándar: 60.09 segundos.
+		B1ms Estándar: 59.65 segundos.
 
 	Número de solicitudes:
 		A0 Estándar: 3.33 segundos.
 		A0 Básico: 3.45 segundos.
 		A1 Básico: 3.15 segundos.
+		B1s Estándar: 3.09 segundos.
+		B1ms Estándar: 3.05 segundos.
 
-Con estas tres mediciones se proceden a realizar tres test de hipótesis donde la hipótesis principal es la A1 Básico y la hipótesis alternativa es la A0 Estándar. Tanto como para el primer test, tiempo de provisonamiento, como para el tercero, número de solicitudes, se rechaza la hipótesis. Sin embargo para el segundo test de hipótesis realizado, concurrencia, se acepta la hipótesis, por consecuencia se decide quedarse con el tamaño *A1 Básico*.
+
+Con estas tres mediciones se proceden a realizar tres test de hipótesis donde la hipótesis principal es la B1ms Estándar y la hipótesis alternativa es la B1s  Estándar. En los tres test se acepta la hipótesis, por consecuencia se decide quedarse con el tamaño *B1s Estándar*.
 
 
 ### La imagen del sistema operativo.
