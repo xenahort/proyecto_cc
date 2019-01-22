@@ -47,10 +47,7 @@ Por último, se guardará el resultado del comentario obtenido, se actualizará 
 En resumen, los microservicios van a ser:
 	
 	- Microservicio de conexión con la base de datos NoSQL MongoDB.
-	- Microservicio de obtención de comentario.
-	- Microservicio de tokenización.
-	- Microservicio de análisis del comentario.
-	- Microservicio de consulta de datos y resultados.
+	- Servicio de LOG.
 
 ## Desplegar
 Despliegue: https://salty-retreat-32943.herokuapp.com/

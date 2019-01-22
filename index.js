@@ -3,6 +3,7 @@ var aplicacion = express();
 var cliente = require('mongodb').MongoClient;
 var url = "mongodb://localhost/database";
 var tamanho=0;
+var bunyan = require('bunyan');
 
 //se crea la base de datos
 cliente.connect(url,{ useNewUrlParser: true }, function(err, db) {
@@ -12,6 +13,16 @@ cliente.connect(url,{ useNewUrlParser: true }, function(err, db) {
     console.log("Creada la base de datos");
     db.close();
   });
+});
+
+var log = bunyan.createLogger({
+  name: 'index',
+  streams: [
+    {
+      level: 'error',
+      path: './error.log'  // log ERROR and above to a file
+    }
+  ]
 });
 
 //creamos nuestro vector numérico llamada comentario.
