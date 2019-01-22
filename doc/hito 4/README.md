@@ -27,11 +27,11 @@ A la hora de crear una máquina virtual hay que tener en cuenta los siguientes p
 	La imagen del sistema operativo.
 	El tamaño del disco que se desea.
 
-A continuación, se irá justificando una a una cada una de las elecciones que se han ido tomando para crear la máquina virtual.
+A continuación, se irán justificando cada una de las elecciones que se han ido tomando para crear la máquina virtual.
 
 ### El nombre del usuario.
 
-Esta elección puede ser la que el usuario desee ya que, no influye a la hora de que la máquina ejecute con más o menos presteza el microservicio. 
+Esta elección puede ser la que el usuario desee, ya que no influye a la hora de que la máquina se ejecute con más o menos presteza. 
 
 Por otro lado, se recomienda que se ponga el mismo nombre del usuario que se tiene en Github, en el caso de esta práctica el nombre va a ser *jrtrillo*. Sin embargo, si se desea poner como nombre de usuario *juan* también es factible.
 
@@ -39,7 +39,7 @@ En resumen, el nombre de usuario es la forma de darle una autoría a la máquina
 
 ### El nombre del grupo recurso.
 
-La elección del nombre del grupo recurso va a ser similar a la elección anterior. Si en la anterior se escogió por elección propia y sin seguir ningún criterio significativo, en este caso va a suceder lo mismo. El nombre que ha escogido ha sido *hito4* porque de esta forma se puede conocer que las máquinas creadas con este nombre van a pertenecer al hito que se está describiendo. De igual modo, si se desea poner otro nombre porque al usuario le resulte más atractivo o simplemente para representativo se puede realizar sin que el resultado se vea afectado en el tiempo.
+La elección del nombre del grupo recurso va a ser similar a la elección anterior. Si en la anterior se escogió por elección propia y sin seguir ningún criterio significativo, en este caso va a suceder lo mismo. El nombre que ha escogido ha sido *hito4* porque de esta forma se puede conocer que las máquinas creadas con este nombre van a pertenecer al hito que se está describiendo. De igual modo, si se desea poner otro nombre porque al usuario le resulte más atractivo o simplemente más representativo se puede realizar sin que el resultado se vea afectado en el tiempo.
 
 ### El nombre de la máquina virtual.
 
@@ -49,10 +49,10 @@ Para finalizar, la elección de la imagen del sistema operativo se explicará m�
 
 ### La localización.
 
-La primera elección con demostración empírica va a ser la elección de la localización. La forma de elegir la mejor localización es medir la concurrencia y el número de solicitudes a realizar para la sesión de benchmarking. Al existir diferentes localizaciones, se van a escoger las tres que posean la menor latencia.
+La primera elección con demostración empírica va a ser la elección de la localización. La forma de elegir la mejor localización es medir la concurrencia y el número de solicitudes a realizar para la sesión de benchmarking. Al existir diferentes localizaciones, se van a preseleccionar las tres que posean la menor latencia.
 Para ello, se han observado las siguientes webs: [Web 1](http://www.azurespeed.com/) y [Web 2](https://azurespeedtest.azurewebsites.net/)
 
-Si se accede a la segunda web se puede ver como se muestra un valor fijo y que solo se actualiza cuando se recarga la web. Sin embargo, si se accede a la primera web se obtiene que se muestra un gráfico que se actualiza continuamente pero normalmente muestra valores diferentes a la segunda web. Por consiguiente, se decide tomar 5 catas en las dos webs, en intervalos de una hora y media, mostrando la localización con la latencia menor. De esta forma, se hará una preselección de las localizaciones más relevantes:
+Si se accede a la segunda web se puede ver como se muestra un valor fijo y que solo se actualiza cuando se recarga la web. Sin embargo, si se accede a la primera web se obtiene que se muestra un gráfico que se actualiza continuamente pero normalmente muestra valores diferentes a la segunda web. Por consiguiente, se decide tomar 5 catas, a diferenctes horas, en las dos webs, en intervalos de una hora y media, mostrando la localización con la latencia menor. De esta forma, se hará una preselección de las localizaciones más relevantes:
 
 Los resultados de la primera web son los siguientes:
 
@@ -76,7 +76,7 @@ El análisis de resultados son los siguientes:
 	En segundo lugar: West UK con un porcentaje del 20 por ciento
 	La tercera posición la comparte Central India, North Europe, East US y South UK todos con un porcentaje del 10 por ciento.
 
-Una vez delimitadas las tres localizaciones, West Europe, West UK y South UK, se procede a realizar una máquina virtual con cada uno de ellas, con el mismo tamaño y con el mismo sistema operativo. Los resultados obtenidos son los siguientes:
+Una vez delimitadas las tres localizaciones, West Europe, West UK y South UK, se procede a realizar una máquina virtual con cada una de ellas, con el mismo tamaño y con el mismo sistema operativo. Los resultados obtenidos son los siguientes:
 
 	Correlaciones:
 		West Europe: 60.57 segundos.
@@ -88,11 +88,11 @@ Una vez delimitadas las tres localizaciones, West Europe, West UK y South UK, se
 		West UK: 3.76 segundos.
 		South UK: 3.59 segundos.
 
-Ante este resultado queda demostrado que el lugar elegido es *West Europe*, ya que las correlaciones y el número de solicitudes son bastante menores que el resto.
+Ante este resultado queda demostrado que la localización elegida es *West Europe*, ya que las correlaciones y el número de solicitudes son bastante menores que el resto.
 
 ### Tamaño de la imagen.
 
-Una vez delimitada la localización procede a la elección 
+Una vez delimitada la localización procede a la elección.
 
 Se poseen los siguientes tamaños para crear la máquina virtual con un coste menor a veinticinco euros y que cubran nuestras necesidades, a saber:
 	
@@ -152,7 +152,7 @@ Como se puede apreciar la diferencia entre el A0 estándar y el A0 básico es so
 	B1s Estándar: 3 min 15 segundos.
 	B1ms Estándar: 3 min 5 segundos.
 
-El tiempo de provisonamiento muestra que la diferencia de dinero no se rentabiliza por la reducción de tiempo, pero para poder confirmar esta hipótesis que se tiene se va a utilizar [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) para medir la concurrencia y el  número de solicitudes a realizar para la sesión de benchmarking, al igual que se hizo anteriormente con la localización. Para ello se utilizan las cinco máquinas ya creadas y se obtienen los resultados:
+El tiempo de provisonamiento muestra que la diferencia de dinero no se rentabiliza por la reducción de tiempo, pero para poder confirmar esta hipótesis que se tiene se va a utilizar [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) para medir la concurrencia y el  número de solicitudes a realizar para la sesión de benchmarking, al igual que se hizo anteriormente con la localización. Para ello, se utilizan las cinco máquinas ya creadas y se obtienen los resultados:
 
 	Concurrencia:
 		A0 Estándar: 61.58 segundos.
@@ -234,3 +234,4 @@ Con esto se puede crear nuestro script que contiene lo siguiente:
 	echo "Abrir puerto 80"
 	az vm open-port --resource-group hito4 --name ubuntu7 --port 80 
 
+Una vez creada y aprovisionada se realizan los mismos pasos que se hicieron en el [hito 3](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison).
