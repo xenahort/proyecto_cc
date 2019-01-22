@@ -174,6 +174,24 @@ Con estas tres mediciones se proceden a realizar tres test de hipótesis donde l
 
 ### La imagen del sistema operativo.
 
-Para elegir el sistema operativo utilizamos el la documentación del [hito 3](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison). Aparte de utilizar esta herramienta, [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html),
+Para finalizar una vez que se tiene escogidas todas las características se procede a elegir el sistema operativo. Al igual que se realizó en el [hito 3](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison), se va a medir  Ubuntu Server 18 LST y Centos. Para ello, se va crear dos máquinas virtuales con las siguientes características:
 
+	Localización: West Europe.
+	Tamaño: B1s
+
+La primera máquina virtual tendrá Ubuntu Server 18 LST y la segunda máquina virtual tendrá Centos. Para medir estas dos máquinas se procede, al igual que se ha ido utilizando hasta ahora, la herramienta [Apache Bench](https://httpd.apache.org/docs/2.4/programs/ab.html) y se vuelven a realizar las medidas que se realizaron ya en el [hito 3](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison) y aparte se mide el tiempo de creación de las máquinas virtuales. Por consecuencia, se obtienen los resultados siguientes:
+
+	Tiempo de Creación de la máquina virtual:
+	· Ubuntu Server 18 LST: 2 min 43 segundos.
+	· Centos : 2 min 54 segundos.
+	
+	Concurrencia:
+	· Ubuntu Server 18 LST: 59.84 segundos.
+	· Centos : 59.82 segundos.
+
+	Número de solicitudes:
+	· Ubuntu Server 18 LST: 3.15 segundos.
+	· Centos: 3.10 segundos.
+
+Se realiza un test de hipótesis con las dos medidas poniendo como hipótesis principal el tiempo de Centos y  
 ## Script
