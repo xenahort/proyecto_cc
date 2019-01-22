@@ -4,6 +4,7 @@
 [![DBMS](https://img.shields.io/badge/DBMS-MongoDB-green.svg)](https://www.mongodb.com/es)
 [![Language](https://img.shields.io/badge/Language-Node-pink.svg)](https://nodejs.org/en/)
 [![License](https://img.shields.io/badge/License-GPL-purple.svg)](https://github.com/jrtrillo/proyecto_cc/blob/master/LICENSE)
+[![Travis](https://img.shields.io/badge/Travis-travis-red.svg)](https://travis-ci.com/jrtrillo/proyecto_cc/)
 
 ## Alumno:
 Jose Ramón Trillo Vílchez
@@ -45,7 +46,6 @@ Por último, se guardará el resultado del comentario obtenido, se actualizará 
 
 En resumen, los microservicios van a ser:
 	
-	- Microservicio de una base datos con metadatos de cada comentario.
 	- Microservicio de conexión con la base de datos NoSQL MongoDB.
 	- Microservicio de obtención de comentario.
 	- Microservicio de tokenización.
@@ -59,10 +59,16 @@ Para desplegar el microservicio se ha decidido utilizar Heroku, ya que la cuenta
 
 Por otro lado, antes de que la aplicación sea desplegada se pasan unos test realizado y también se utiliza [Travis CI](https://docs.travis-ci.com/). Esta aplicación toma los archivos de Github de cualquier repositorio, busca el archivo .yml y realiza los test que contiene el archivo que se acaba de mencionar. Además la aplicación es totalmente gratuita. Para ver más información de lo realizado en el Hito2 se puede ver en el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/blob/master/doc/README.md)
 
+
 ## Provisión
 Para ver la documentación de la provisión, se debe ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/provison).
 
-MV: 51.144.78.154
+MV: 23.97.141.162
+
+## Acopio
+Para ver la documentación del hito 4, se debe ver el siguiente [enlace](https://github.com/jrtrillo/proyecto_cc/tree/master/doc/hito%204).
+
+MV2: 40.118.23.206
 
 ## Lenguaje a utilizar:
 El servicio por lo general va a estar escrito en [Node](https://nodejs.org/en/). Dentro de [Node](https://nodejs.org/en/) se va a utilizar un microframework web denominado [express](https://expressjs.com/).  Por otro lado, también se tendrá en cuenta utilizar Python para otros módulos.
