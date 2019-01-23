@@ -15,7 +15,8 @@ cliente.connect(url,{ useNewUrlParser: true }, function(err, db) {
   });
 });
 
-var log = bunyan.createLogger({ // https://www.npmjs.com/package/bunyan
+// Código creado a partir de https://www.npmjs.com/package/bunyan
+var log = bunyan.createLogger({ 
   name: 'index',
   streams: [
     {
