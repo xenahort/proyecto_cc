@@ -15,12 +15,12 @@ cliente.connect(url,{ useNewUrlParser: true }, function(err, db) {
   });
 });
 
-var log = bunyan.createLogger({
+var log = bunyan.createLogger({ // https://www.npmjs.com/package/bunyan
   name: 'index',
   streams: [
     {
       level: 'error',
-      path: './error.log'  // log ERROR and above to a file
+      path: './error.log'  
     }
   ]
 });
