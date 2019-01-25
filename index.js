@@ -1,6 +1,67 @@
 var express = require('express');
+<<<<<<< HEAD
 var app = express();
 var {datos,historial,size,anhade,editar,borrardatos,buscartwitter,tweetfecha,tweetfechaprecisa,tweetconrespectouser,tweetmaslike,tweetmasretweet}=require("./comentario.js");
+=======
+var aplicacion = express();
+var cliente = require('mongodb').MongoClient;
+var url = "mongodb://localhost/database";
+var tamanho=0;
+var bunyan = require('bunyan');
+
+//se crea la base de datos
+cliente.connect(url,{ useNewUrlParser: true }, function(err, db) {
+  console.log("Se crea la base de datos");
+  var inst = db.db("database");
+  inst.createCollection("aplicacion", function(err, res) { //https://docs.mongodb.com/manual/reference/method/db.createCollection/
+    console.log("Creada la base de datos");
+    db.close();
+  });
+});
+
+// Código creado a partir de https://www.npmjs.com/package/bunyan
+var log = bunyan.createLogger({ 
+  name: 'index',
+  streams: [
+    {
+      level: 'error',
+      path: './error.log'  
+    }
+  ]
+});
+
+//creamos nuestro vector numérico llamada comentario.
+var comentario = {
+  idtwitter:0,
+  iduser:0,
+  etiqueta:0,
+  dia:0,
+  mes:0,
+  anho:0,
+  hora:0,
+  min:0,
+  nlikes:0,
+  nretweet:0
+}
+
+//creamos la funcion añadir
+
+function anhade(idtwitter,iduser,etiqueta,dia,mes,anho,hora,min,nlikes,nretweet){
+  comentario.idtwitter = idtwitter;
+  comentario.iduser = iduser;
+  comentario.etiqueta = etiqueta;
+  comentario.dia = dia;
+  comentario.mes = mes;
+  comentario.anho = anho;
+  comentario.hora = hora;
+  comentario.min = min;
+  comentario.nlikes = nlikes;
+  comentario.nretweet = nretweet;
+ 
+}
+
+
+>>>>>>> 908ef73c0156c1ca9a069daa5c5d7a852615f26f
 //Crear el ok
 app.get('/', function (req, res) {
   res.send({
