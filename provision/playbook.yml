@@ -1,5 +1,5 @@
 ---
-  - hosts: ubuntu7
+  - hosts: probar
 
     tasks:
     - name: Instala curl 
