@@ -31,3 +31,10 @@ Paso 6 crear archivo Vaagrantfile
 Paso 7 $ vagrant up --provider=azure --no-parallel
 Paso 8 $ vagrant ssh
 dentro instalar pm2
+
+## Proyecto comprobado por [@xenahort](https://github.com/xenahort)
+
+El sistema de orquestación implementado por @jrtrillo ha sido probado por @xenahort verificando que los resultados obtenidos son los correctos. A continuación se muestra una prueba de su ejecución:
+
+![Vagrant-xenahort](https://github.com/jrtrillo/proyecto_cc/tree/master/orquestacion/img/orq1.png)
+![Vagrant-xenahort](https://github.com/jrtrillo/proyecto_cc/tree/master/orquestacion/img/orq2.png)
