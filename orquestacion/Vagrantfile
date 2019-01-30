@@ -1,0 +1,61 @@
+require 'vagrant-azure'
+
+Vagrant.configure('2') do |config|
+
+	config.vm.define "mongo" do |mongo|
+
+  		mongo.vm.box = 'azure-dummy'
+		mongo.ssh.private_key_path = '~/.ssh/id_rsa'
+		
+		mongo.vm.provider 'azure' do |azu, override|
+
+    			azu.tenant_id = ENV['AZURE_TENANT_ID']
+    			azu.client_id = ENV['AZURE_CLIENT_ID']
+    			azu.client_secret = ENV['AZURE_CLIENT_SECRET']
+    			azu.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
+
+    			azu.vm_name = 'mongojoseramontrillo'
+    			azu.vm_image_urn = 'Canonical:UbuntuServer:18.04-LTS:latest'
+    			azu.vm_size = 'Standard_B1s'
+    			azu.location = 'westeurope'
+    			azu.resource_group_name = 'Hito5'
+				azu.virtual_network_name = "nombrered"
+				azu.tcp_endpoints = [80,27017]
+
+  		end
+		mongo.vm.provision "ansible" do |ansible|
+
+    			ansible.playbook = "mongo.yml"
+			
+  		end
+  	end
+		config.vm.define "client" do |client|
+
+  		client.vm.box = 'azure-dummy'
+		client.ssh.private_key_path = '~/.ssh/id_rsa'
+		
+		client.vm.provider 'azure' do |azu, override|
+
+    			azu.tenant_id = ENV['AZURE_TENANT_ID']
+    			azu.client_id = ENV['AZURE_CLIENT_ID']
+    			azu.client_secret = ENV['AZURE_CLIENT_SECRET']
+    			azu.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
+
+    			azu.vm_name = 'ubuntujoseramontrillo'
+    			azu.vm_image_urn = 'Canonical:UbuntuServer:18.04-LTS:latest'
+    			azu.vm_size = 'Standard_B1s'
+    			azu.location = 'westeurope'
+    			azu.resource_group_name = 'Hito5'
+				azu.virtual_network_name = "nombrered"
+				azu.tcp_endpoints = [80,27017]
+
+  		end
+  		 	client.vm.provision "file", source: "../index.js", destination: "/home/vagrant/index.js"
+  		 	client.vm.provision "file", source: "../comentario.js", destination: "/home/vagrant/comentario.js"
+			client.vm.provision "ansible" do |ansible|
+
+    			ansible.playbook = "playbook.yml"
+			
+  		end
+ 	end
+ end

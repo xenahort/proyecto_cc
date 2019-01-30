@@ -1,0 +1,22 @@
+---
+  - hosts: client
+
+    tasks:
+    - name: Instala curl 
+      become: yes
+      apt: pkg=curl state=present
+      
+    - name: Se descarga NodeJS
+      become: yes
+      shell: curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+      args: 
+        warn: no
+
+    - name: Se instala NodeJS
+      become: yes
+      apt: pkg=nodejs state=present
+
+    - name: Se instala las dependencias del package.json
+      raw: npm install
+
+    
